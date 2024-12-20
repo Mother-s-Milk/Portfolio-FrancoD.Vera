@@ -265,9 +265,9 @@ img {
 
 .skills > span {
 	padding: 3px 6px;
-	border: 1px solid #999;
+	border: 1px solid #666;
 	font-size: 15px;
-	background-color: #666;
+	background-color: rgba(51, 51, 51, 0.6);
 	display: flex;
 	align-items: center;
 	border-radius: 6px;
@@ -275,7 +275,7 @@ img {
 
 .skills > span > i {
 	margin-right: 3px;
-	font-size: 18px;
+	font-size: 15px;
 }
 
 .proyectos {
@@ -327,8 +327,8 @@ img {
 }
 
 .proyecto-tarjeta .skills span {
-	background-color: rgba(0, 0, 0, 0.3);
-	border: none;
+	background-color: rgba(0, 0, 0, 0.6);
+	border: #333;
 }
 
 .links-repositorio a {
@@ -648,7 +648,7 @@ img {
 		font-size: 13px;
 	}
 	.skills > span > i {
-		font-size: 15px;
+		/*font-size: 15px;*/
 	}
 	.links-repositorio a {
 		width: 39px;
