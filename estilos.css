@@ -302,7 +302,6 @@ img {
 	max-width: 450px;
 	width: 100%;
 	border-radius: 6px;
-	margin-bottom: 12px;
 	min-width: 100px;
 }
 
@@ -463,6 +462,7 @@ img {
 	}
 	.proyecto-tarjeta img {
 		max-width: 100%;
+		margin-bottom: 12px;
 	}
 }
 
