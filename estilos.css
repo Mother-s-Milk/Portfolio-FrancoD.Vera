@@ -259,7 +259,7 @@ img {
 /**/
 .skills {
 	display: flex;
-	gap: 3px;
+	gap: 6px;
 	flex-wrap: wrap;
 }
 
@@ -268,8 +268,14 @@ img {
 	border: 1px solid #999;
 	font-size: 15px;
 	background-color: #666;
-	display: inline-block;
+	display: flex;
+	align-items: center;
 	border-radius: 6px;
+}
+
+.skills > span > i {
+	margin-right: 3px;
+	font-size: 18px;
 }
 
 .proyectos {
@@ -640,6 +646,9 @@ img {
 @media (max-width: 425px) {
 	.skills > span {
 		font-size: 13px;
+	}
+	.skills > span > i {
+		font-size: 15px;
 	}
 	.links-repositorio a {
 		width: 39px;
