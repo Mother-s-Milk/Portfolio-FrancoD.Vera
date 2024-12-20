@@ -503,19 +503,7 @@ img {
 
 @media (max-width: 945px) {
 	.section {
-		padding: 0.9375rem 0.9375rem; /*30px/150px*/
-	}
-}
-
-@media (max-width: 910px) {
-	.proyecto-tarjeta h1 {
-		/*max-width: 900;
-		width: 100%;*/
-	}
-	
-	.proyecto-tarjeta > div:first-of-type {
-		/*max-width: 900;*/
-		/*width: 100%;*/
+		padding: 0.9375rem 0.9375rem;
 	}
 }
 
