@@ -302,7 +302,7 @@ img {
 	max-width: 450px;
 	width: 100%;
 	border-radius: 6px;
-	min-width: 100px;
+	/*min-width: 100px;*/
 }
 
 .proyecto-tarjeta h1 {
