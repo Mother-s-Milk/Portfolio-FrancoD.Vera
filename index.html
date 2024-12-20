@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Portfolio - Franco D. Vera</title>
+
+	<meta name="description" content="Portfolio de Franco D. Vera, desarrollador web.">
+    <meta name="keywords" content="portfolio, desarrollador web, Franco D. Vera">
+    <meta name="author" content="Franco D. Vera">
+
+	<!-- Favicon estándar -->
+  	<link rel="icon" href="icono.png" type="image/x-icon">
+
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script defer type="text/javascript" src="script.js"></script>
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!--Favicon-->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+	<div class="space-background"></div>
+
+	<header>
+		<div class="container section nav-container">
+			<div class="logo">
+				F.D.V
+			</div>
+			<nav class="nav-desplegable">
+				<ul class="nav-links">
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#sobreMi">Sobre mi</a></li>
+					<li><a href="#tecnologias">Habilidades</a></li>
+					<li><a href="#proyectos">Proyectos</a></li>
+					<li><a href="#contacto">Contacto</a></li>
+				</ul>
+			</nav>
+			<button type="button" class="display-none btn-mostrar-menu"><i class="fa-solid fa-bars"></i></button>
+		</div>
+	</header>
+
+	<main>
+		<section class="container section encabezado">
+			<div class="img-container">
+				<img src="img/yo.webp">
+			</div>
+			<div class="info-header">
+				<h1>Franco D. Vera</h1>
+				<p class="text">Desarrollador web full-stack.</p>
+				<p class="text"><i class="fa-solid fa-location-dot" style="margin-right: 6px; color: red"></i>Caleta Olivia, Santa Cruz</p>
+				<div class="links link-2">
+					<a href="#" id="copy-email" onclick="copyEmail(event)"><i class="fa-solid fa-envelope" style="margin-right: 3px"></i>francoveradrms@gmail.com</a>
+					<a href="#"><i class="fa-solid fa-file"></i></a>
+					<a href="https://github.com/Mother-s-Milk" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
+					<a href="https://www.linkedin.com/in/francovera07/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+				</div>
+			</div>
+		</section>
+		<div class="divisor-container">
+			<hr class="divisor">
+		</div>
+		<section class="container section" id="sobreMi">
+			<h1 class="titulo-seccion">Sobre mí</h1>
+			<p class="text">Soy Analista de Sistemas, con experiencia en el desarrollo de sistemas de información personalizados y páginas web interactivas. Mi stack tecnológico incluye <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong> y <strong>MySQL</strong>, lo que me permite crear aplicaciones web completas. Poseo habilidades en diseño orientado a objetos y manejo de arquitecturas como MVC y DAO/DTO, asegurando un código limpio, modular y escalable.</p>
+		</section>
+		<div class="divisor-container">
+			<hr class="divisor">
+		</div>
+		<section class="container section" id="tecnologias">
+			<h1 class="titulo-seccion">Tecnologías</h1>
+			<div class="skills">
+				<span>HTML</span>
+				<span>CSS</span>
+				<span>JavaScript</span>
+				<span>PHP</span>
+				<span>Java</span>
+				<span>MySQL</span>
+				<span>GIT</span>
+			</div>
+		</section>
+		<div class="divisor-container">
+			<hr class="divisor">
+		</div>
+		<section class="container section" id="proyectos">
+			<h1 class="titulo-seccion">Proyectos</h1>
+			<main class="proyectos">
+				<article class="proyecto-tarjeta">
+					<div>
+						<h1>Licorería: Gestión y ventas</h1>
+						<p class="text">Un sistema para la gestión de una licorería que permite manejar inventario, ventas y proveedores. Además, facilita las operaciones diarias. El proyecto integra backend y frontend robustos</p>
+						<div class="skills">
+							<span>HTML</span>
+							<span>CSS</span>
+							<span>JavaScript</span>
+							<span>PHP</span>
+							<span>MySQL</span>
+							<span>GIT</span>
+						</div>
+						<div class="links-repositorio">
+							<!--<a href="#"><i class="fa-solid fa-link"></i></a>-->
+							<a href="https://github.com/Mother-s-Milk/reservaPrivada" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
+						</div>
+					</div>
+					<div>
+						<img src="img/proyecto.png">
+					</div>
+				</article>
+				<article class="proyecto-tarjeta">
+					<div>
+						<h1>Pizza Fusión: Sitio Web con Carrito de Compras</h1>
+						<p class="text">Un sitio web interactivo para una pizzería. Ofrece a los usuarios la posibilidad de explorar el menú completo, armar su carro de compras y enviar el pedido con los detalles del mismo.</p>
+						<div class="skills">
+							<span>HTML</span>
+							<span>CSS</span>
+							<span>JavaScript</span>
+							<span>PHP</span>
+							<span>MySQL</span>
+						</div>
+						<div class="links-repositorio">
+							<!--<a href="#"><i class="fa-solid fa-link"></i></a>-->
+							<a href="https://github.com/Mother-s-Milk/pizzaFusion" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
+						</div>
+					</div>
+					<div>
+						<img src="img/proyecto2.png">
+					</div>
+				</article>
+			</main>
+		</section>
+		<div class="divisor-container">
+			<hr class="divisor">
+		</div>
+		<section class="container section">
+			<h1 class="titulo-seccion">Formación</h1>
+			<div class="formacion-tarjeta">
+				<div>
+					<h1>Analista de Sistemas</h1>
+					<p class="text">UNPA-UACO</p>
+					<p class="text">Formación en desarrollo de software, algoritmos, bases de datos y diseño de sistemas. Especialización en tecnologías web y programación orientada a objetos.</p>
+				</div>
+				<div>
+					<span class="salto-linea"></span>
+					<p class="text">2021/2024</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	
+	<div class="divisor-container">
+		<hr class="divisor">
+	</div>
+
+	<footer>
+		<div class="container section" id="contacto">
+			<p class="footer-logo">Franco D. Vera</p>
+			<div class="links link-3">
+				<a href="#" id="copy-email" onclick="copyEmail(event)"><i class="fa-solid fa-envelope" style="margin-right: 3px;"></i>francoveradrms@gmail.com</a>
+				<a href="#"><i class="fa-solid fa-file"></i></a>
+				<a href="https://github.com/Mother-s-Milk" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
+				<a href="https://www.linkedin.com/in/francovera07/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Modal -->
+	<div id="emailModal" class="modal">
+  		<div class="modal-content">
+  			¡Copiado!
+    	</div>
+	</div>
+	
+</body>
+</html>
