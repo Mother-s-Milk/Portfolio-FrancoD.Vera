@@ -217,13 +217,13 @@ img {
 }
 
 .link-3 a {
-	background-color: #3e4163;
-	border: 1px solid #617496;
+	background-color: rgba(30, 58, 86, 1);
+	border: 1px solid #284E74;
 }
 
 .link-3 a:hover {
-	background-color: #617496;
-	border: 1px solid #3e4163;
+	background-color: #284E74;
+	border: 1px solid rgba(30, 58, 86, 1);
 }
 
 .img-container > img {
@@ -294,7 +294,7 @@ img {
 	padding: 1.875rem;
 	border-radius: 9px;
 	text-align: justify;
-	background-color: rgba(230, 126, 34, 1);
+	background-color: rgba(230, 126, 34, 0.85);
 	border: 1px solid #b34b00;
 	width: 100%;
 }
@@ -354,7 +354,8 @@ img {
 /**/
 /**/
 .formacion-tarjeta {
-	border: 1px solid #666;
+	border: 1px solid #284E74;
+	background-color: rgba(30, 58, 86, 0.85);
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
