@@ -1,165 +1,248 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<!--¡Hello! :)-->
+	<!-- Puto el que lee :) -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Portfolio - Franco D. Vera</title>
+	<title>Franco Vera | Desarrollador Full-Stack</title>
 
-	<meta name="description" content="Portfolio de Franco Vera, desarrollador web.">
-    <meta name="keywords" content="portfolio, desarrollador web, Franco D. Vera">
-    <meta name="author" content="Franco Vera">
-
-	<meta property="og:title" content="Portfolio de Franco Vera - Desarrollador web">
-    <meta property="og:description" content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explora mis proyectos y tecnologías.">
-
-	<meta property="og:image" content="https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-    <meta property="og:url" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
-    <meta property="og:type" content="website">
+	<!-- Estilos -->
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script defer type="module" src="main.js"></script>
 
 	<!-- Favicon estándar -->
   	<link rel="icon" href="img/icono.png" type="image/x-icon">
 
-	<link rel="stylesheet" type="text/css" href="estilos.css">
-	<script defer type="text/javascript" src="script.js"></script>
+	<!-- Metadatos -->
+	<meta name="description" content="Portfolio de Franco Vera, desarrollador web full-stack.">
+    <meta name="keywords" content="portfolio, desarrollador web, Franco D. Vera, software, developer">
+    <meta name="author" content="Franco Vera">
+	<meta property="og:title" content="Portfolio de Franco Vera - Desarrollador web full-stack.">
+    <meta property="og:description" content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explorá mis proyectos y tecnologías.">
+	<meta property="og:image" content="https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <meta property="og:url" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
+    <meta property="og:type" content="website">
 
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-	<!--Favicon-->
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
 	<div class="space-background"></div>
 
-	<header>
-		<div class="container section nav-container">
-			<div class="logo">
-				F.D.V
-			</div>
-			<nav class="nav-desplegable">
-				<ul class="nav-links">
-					<li><a href="javascript:void(0)">Inicio</a></li>
-					<li><a href="#sobreMi">Sobre mi</a></li>
-					<li><a href="#herramientas">Herramientas</a></li>
-					<li><a href="#proyectos">Proyectos</a></li>
-					<li><a href="#contacto">Contacto</a></li>
-				</ul>
-			</nav>
-			<button type="button" class="display-none btn-mostrar-menu"><i class="fa-solid fa-bars"></i></button>
-		</div>
+	<header class="principal-header">
+		<button type="button">Menu</button>
+		<nav class="principal-nav">
+			<ul>
+				<li><a href="javascript:void(0)">Inicio</a></li>
+				<li><a href="#sobre-mi">Sobre mi</a></li>
+				<li><a href="#herramientas">Herramientas</a></li>
+				<li><a href="#proyectos">Proyectos</a></li>
+				<li><a href="#contacto">Contacto</a></li>
+			</ul>
+		</nav>
 	</header>
 
 	<main>
-		<section class="container section encabezado">
-			<div class="img-container">
-				<img src="img/yo.webp" alt="Foto de perfil">
-			</div>
-			<div class="info-header">
-				<h1>Franco D. Vera</h1>
-				<p class="text">Desarrollador web full-stack.</p>
-				<p class="text"><i class="fa-solid fa-location-dot" style="margin-right: 6px; color: red"></i>Caleta Olivia, Santa Cruz</p>
-				<div class="links link-2">
-					<a href="javascript:void(0)" id="copy-email" onclick="copyEmail(event)"><i class="fa-solid fa-envelope" style="margin-right: 3px"></i>francoveradrms@gmail.com</a>
-					<a href="CV-VeraFranco(AdeS).pdf" download="CV-VeraFranco"><i class="fa-solid fa-file"></i></a>
-					<a href="https://github.com/Mother-s-Milk" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
-					<a href="https://www.linkedin.com/in/francovera07/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+
+		<section class="hero">
+			<h1>¡Hola, soy Franco! Desarrollador web full-stack.</h1>
+			<p>"Llevando tus ideas a la realidad."</p>
+			<footer class="buttons-hero">
+				<button type="button">Conocer más</button>
+				<button type="button">Contactáme</button>
+			</footer>
+		</section>
+		<section class="container section" id="sobre-mi">
+			<main class="sobre-mi-main">
+				<div class="img-sobre-mi">
+					<img src="img/yo.webp" alt="Foto de Franco Veta">
+					<!-- <h1>Franco D. Vera</h1>
+					<p>Desarrollador web full-stack.</p>
+					<p><i class="fa-solid fa-location-dot" style="margin-right: 6px; color: red"></i>Caleta Olivia, Santa Cruz</p> -->
 				</div>
-			</div>
+				<div class="info-sobre-mi">
+					<header>
+						<h1 class="titulo-seccion">Sobre mí</h1>
+					</header>
+					<main>
+						<p>Soy Analista de Sistemas con experiencia en el desarrollo de sistemas de información personalizados y páginas web interactivas. <br><br>Mi stack tecnológico incluye <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, <strong>Java</strong> y <strong>MySQL</strong>, lo que me permite crear aplicaciones web completas. <br><br>Poseo habilidades en diseño orientado a objetos y manejo de arquitecturas como MVC y DAO/DTO, asegurando un código limpio, modular y escalable.</p>
+					</main>
+					<footer class="links link-2">
+						<a href="javascript:void(0)" id="copy-email" onclick="copyEmail(event)"><i class="fa-solid fa-envelope"></i></a>
+						<a href="CV-VeraFranco(AdeS).pdf" download="CV-VeraFranco"><i class="fa-solid fa-file"></i></a>
+						<a href="https://github.com/Mother-s-Milk" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
+						<a href="https://www.linkedin.com/in/francovera07/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+					</footer>
+				</div>
+			</main>
 		</section>
+
 		<div class="divisor-container">
 			<hr class="divisor">
 		</div>
-		<section class="container section" id="sobreMi">
-			<h1 class="titulo-seccion">Sobre mí</h1>
-			<p class="text">Soy Analista de Sistemas con experiencia en el desarrollo de sistemas de información personalizados y páginas web interactivas. Mi stack tecnológico incluye <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, <strong>Java</strong> y <strong>MySQL</strong>, lo que me permite crear aplicaciones web completas. Poseo habilidades en diseño orientado a objetos y manejo de arquitecturas como MVC y DAO/DTO, asegurando un código limpio, modular y escalable.</p>
-		</section>
-		<div class="divisor-container">
-			<hr class="divisor">
-		</div>
+
 		<section class="container section" id="herramientas">
-			<h1 class="titulo-seccion">Herramientas</h1>
-			<div class="skills">
-				<span><i class="fa-brands fa-html5"></i>HTML</span>
-				<span><i class="fa-brands fa-css3-alt"></i>CSS</span>
-				<span><i class="fa-brands fa-js"></i>JavaScript</span>
-				<span><i class="fa-brands fa-php"></i>PHP</span>
-				<span><i class="fa-brands fa-java"></i>Java</span>
-				<span><i class="fa-solid fa-database"></i>MySQL</span>
-				<span><i class="fa-brands fa-git-alt"></i>GIT</span>
-			</div>
-		</section>
-		<div class="divisor-container">
-			<hr class="divisor">
-		</div>
-		<section class="container section" id="proyectos">
-			<h1 class="titulo-seccion">Proyectos</h1>
-			<main class="proyectos">
-				<article class="proyecto-tarjeta">
+			<header class="header-section">
+				<h1 class="titulo-seccion">Herramientas</h1>
+				<p>Tecnologías que uso para diseñar, desarrollar y desplegar aplicaciones web.</p>
+			</header>
+			<main>
+				<div class="skills">
 					<div>
-						<h1>Licorería: Gestión y ventas</h1>
-						<p class="text">Un sistema para la gestión de una licorería que permite manejar inventario, ventas y proveedores. Además, facilita las operaciones diarias. El proyecto integra backend y frontend robustos</p>
-						<div class="skills">
-							<span><i class="fa-brands fa-html5"></i>HTML</span>
-							<span><i class="fa-brands fa-css3-alt"></i>CSS</span>
-							<span><i class="fa-brands fa-js"></i>JavaScript</span>
-							<span><i class="fa-brands fa-php"></i>PHP</span>
-							<span><i class="fa-solid fa-database"></i>MySQL</span>
-							<span><i class="fa-brands fa-git-alt"></i>GIT</span>
-						</div>
-						<div class="links-repositorio">
-							<!--<a href="#"><i class="fa-solid fa-link"></i></a>-->
-							<a href="https://github.com/Mother-s-Milk/reservaPrivada" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
-						</div>
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+						<p>HTML</p>
 					</div>
 					<div>
-						<img src="img/proyecto.png" alt="Proyecto 1: Licorería">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+						<p>CSS</p>
+					</div>
+					<div>
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+						<p>JavaScript</p>
+					</div>
+					<div>
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
+						<p>PHP</p>
+					</div>
+					<div>
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+						<p>Java</p>
+					</div>
+					<div>
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+						<p>MySQL</p>
+					</div>
+					<div>
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+						<p>GIT</p>
+					</div>
+				</div>
+			</main>
+		</section>
+
+		<div class="divisor-container">
+			<hr class="divisor">
+		</div>
+
+		<section class="container section" id="proyectos">
+			<header class="header-section">
+				<h1 class="titulo-seccion">Proyectos</h1>
+				<p>Una selección de proyectos donde aplico mis habilidades para resolver problemas reales y crear experiencias web funcionales.</p>
+			</header>
+			<main class="proyectos">
+				<article class="tarjeta-proyecto">
+					<div class="tarjeta-proyecto-imagen">
+						<img src="img/screen-app-clubdelahamburguesa.png" alt="Proyecto 1: Licorería">
+					</div>
+					<h1>Sistema web "Club de la Hamburguesa"</h1>
+					<p>Un sistema para la gestión de una licorería que permite manejar inventario, ventas y proveedores. Además, facilita las operaciones diarias. El proyecto integra backend y frontend robustos</p>
+					<div class="tarjeta-proyecto-tecnologias">
+						<span class="tag-html"><i class="fa-brands fa-html5"></i>HTML</span>
+						<span class="tag-css"><i class="fa-brands fa-css3-alt"></i>CSS</span>
+						<span class="tag-js"><i class="fa-brands fa-js"></i>JavaScript</span>
+						<span class="tag-php"><i class="fa-brands fa-php"></i>PHP</span>
+						<span class="tag-mysql"><i class="fa-solid fa-database"></i>MySQL</span>
+						<span class="tag-git"><i class="fa-brands fa-git-alt"></i>GIT</span>
+					</div>
+					<div class="links-repositorio">
+						<a class="btn-sitio" href="#" title="Ver sitio web" rel="noopener noreferrer"><i class="fa-solid fa-link"></i></a>
+						<a class="btn-github" href="https://github.com/Mother-s-Milk/reservaPrivada" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
 					</div>
 				</article>
-				<article class="proyecto-tarjeta">
-					<div>
-						<h1>Pizza Fusión: Sitio Web con Carrito de Compras</h1>
-						<p class="text">Un sitio web interactivo para una pizzería. Ofrece a los usuarios la posibilidad de explorar el menú completo, armar su carro de compras y enviar el pedido con los detalles del mismo.</p>
-						<div class="skills">
-							<span><i class="fa-brands fa-html5"></i>HTML</span>
-							<span><i class="fa-brands fa-css3-alt"></i>CSS</span>
-							<span><i class="fa-brands fa-js"></i>JavaScript</span>
-							<span><i class="fa-brands fa-php"></i>PHP</span>
-						</div>
-						<div class="links-repositorio">
-							<!--<a href="#"><i class="fa-solid fa-link"></i></a>-->
-							<a href="https://github.com/Mother-s-Milk/pizzaFusion" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
-						</div>
+				<article class="tarjeta-proyecto">
+					<div class="tarjeta-proyecto-imagen">
+						<img src="img/screen-web-clubdelahamburguesa.png" alt="Proyecto 1: Licorería">
 					</div>
-					<div>
-						<img src="img/proyecto2.png" alt="Proyecto 2: Pizza Fusión">
+					<h1>Sistema web "Club de la Hamburguesa"</h1>
+					<p>Un sistema para la gestión de una licorería que permite manejar inventario, ventas y proveedores. Además, facilita las operaciones diarias. El proyecto integra backend y frontend robustos</p>
+					<div class="tarjeta-proyecto-tecnologias">
+						<span class="tag-html"><i class="fa-brands fa-html5"></i>HTML</span>
+						<span class="tag-css"><i class="fa-brands fa-css3-alt"></i>CSS</span>
+						<span class="tag-js"><i class="fa-brands fa-js"></i>JavaScript</span>
+						<span class="tag-php"><i class="fa-brands fa-php"></i>PHP</span>
+						<span class="tag-mysql"><i class="fa-solid fa-database"></i>MySQL</span>
+						<span class="tag-git"><i class="fa-brands fa-git-alt"></i>GIT</span>
+					</div>
+					<div class="links-repositorio">
+						<a class="btn-sitio" href="#" title="Ver sitio web" rel="noopener noreferrer"><i class="fa-solid fa-link"></i></a>
+						<a class="btn-github" href="https://github.com/Mother-s-Milk/reservaPrivada" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
+					</div>
+				</article>
+				<article class="tarjeta-proyecto">
+					<div class="tarjeta-proyecto-imagen">
+						<img src="img/proyecto.png" alt="Proyecto 1: Licorería">
+					</div>
+					<h1>Sistema web "Reserva Privada"</h1>
+					<p>Un sistema para la gestión de una licorería que permite manejar inventario, ventas y proveedores. Además, facilita las operaciones diarias. El proyecto integra backend y frontend robustos</p>
+					<div class="tarjeta-proyecto-tecnologias">
+						<span class="tag-html"><i class="fa-brands fa-html5"></i>HTML</span>
+						<span class="tag-css"><i class="fa-brands fa-css3-alt"></i>CSS</span>
+						<span class="tag-js"><i class="fa-brands fa-js"></i>JavaScript</span>
+						<span class="tag-php"><i class="fa-brands fa-php"></i>PHP</span>
+						<span class="tag-mysql"><i class="fa-solid fa-database"></i>MySQL</span>
+						<span class="tag-git"><i class="fa-brands fa-git-alt"></i>GIT</span>
+					</div>
+					<div class="links-repositorio">
+						<a class="btn-sitio" href="#" title="Ver sitio web" rel="noopener noreferrer"><i class="fa-solid fa-link"></i></a>
+						<a class="btn-github" href="https://github.com/Mother-s-Milk/reservaPrivada" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
+					</div>
+				</article>
+				<article class="tarjeta-proyecto">
+					<div class="tarjeta-proyecto-imagen">
+						<img src="img/screen-web-pizzafusion.png" alt="Proyecto 2: Pizza Fusión">
+					</div>
+					<h1>"Pizza Fusión": Sitio Web con carrito de compras</h1>
+					<p>Un sitio web interactivo para una pizzería. Ofrece a los usuarios la posibilidad de explorar el menú completo, armar su carro de compras y enviar el pedido con los detalles a WhatsApp.</p>
+					<div class="tarjeta-proyecto-tecnologias">
+						<span class="tag-html"><i class="fa-brands fa-html5"></i>HTML</span>
+						<span class="tag-css"><i class="fa-brands fa-css3-alt"></i>CSS</span>
+						<span class="tag-js"><i class="fa-brands fa-js"></i>JavaScript</span>
+						<span class="tag-php"><i class="fa-brands fa-php"></i>PHP</span>
+					</div>
+					<div class="links-repositorio">
+						<a class="btn-sitio" href="#" title="Ver sitio web" rel="noopener noreferrer"><i class="fa-solid fa-link"></i></a>
+						<a class="btn-github" href="https://github.com/Mother-s-Milk/pizzaFusion" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
 					</div>
 				</article>
 			</main>
 		</section>
+
 		<div class="divisor-container">
 			<hr class="divisor">
 		</div>
-		<section class="container section">
-			<h1 class="titulo-seccion">Formación</h1>
-			<div class="formacion-tarjeta">
-				<div>
-					<h1>Analista de Sistemas</h1>
-					<p class="text">UNPA-UACO</p>
-					<p class="text">Formación en desarrollo de software, algoritmos, bases de datos y diseño de sistemas. Especialización en tecnologías web y programación orientada a objetos.</p>
+
+		<section class="container section" id="formacion">
+			<header class="header-section">
+				<h1 class="titulo-seccion">Formación</h1>
+				<p>Mi recorrido académico y profesional en el mundo del desarrollo y la tecnología.</p>
+			</header>
+			<div class="timeline">
+				<!-- Ítem 1 -->
+				<div class="timeline-item izquierda">
+					<div class="contenido">
+						<h2 class="formacion-titulo">Analista de Sistemas</h2>
+						<p class="formacion-lugar">UNPA-UACO</p>
+						<p class="formacion-descripcion">
+						Formación en desarrollo de software, algoritmos, bases de datos y diseño de sistemas. Especialización en tecnologías web y programación orientada a objetos.
+						</p>
+						<span class="formacion-fecha">2021 / 2024</span>
+					</div>
 				</div>
-				<div>
-					<span class="salto-linea"></span>
-					<p class="text">2021/2024</p>
+				<!-- Ítem 2 -->
+				<div class="timeline-item derecha">
+					<div class="contenido">
+						<h2 class="formacion-titulo">Curso Fullstack Developer</h2>
+						<p class="formacion-lugar">Educación IT</p>
+						<p class="formacion-descripcion">
+						Capacitación intensiva en desarrollo frontend y backend con proyectos reales. Tecnologías: HTML, CSS, JS, PHP, MySQL, Git.
+						</p>
+						<span class="formacion-fecha">2023</span>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -169,24 +252,59 @@
 		<hr class="divisor">
 	</div>
 
-	<footer>
-		<div class="container section" id="contacto">
-			<p class="footer-logo">Franco D. Vera</p>
-			<div class="links link-3">
-				<a href="javascript:void(0)" id="copy-email" onclick="copyEmail(event)"><i class="fa-solid fa-envelope" style="margin-right: 3px;"></i>francoveradrms@gmail.com</a>
-				<a href="javascript:void(0)"><i class="fa-solid fa-file"></i></a>
-				<a href="https://github.com/Mother-s-Milk" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
-				<a href="https://www.linkedin.com/in/francovera07/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+	<footer class="principal-footer">
+		<div class="footer-content container">
+			<!-- Columna 1: Información personal -->
+			<div class="info-personal">
+				<p class="">Franco Vera</p>
+				<p class="">Desarrollador Full-Stack</p>
+			</div>
+
+			<!-- Columna 2: Navegación interna -->
+			<div class="footer-navegacion">
+				<h2 class="">Navegación</h2>
+				<ul class="">
+					<li><a href="#inicio">Inicio</a></li>
+					<li><a href="#sobre-mi">Sobre mí</a></li>
+					<li><a href="#herramientas">Herramientas</a></li>
+					<li><a href="#proyectos">Proyectos</a></li>
+					<li><a href="#contacto">Contacto</a></li>
+				</ul>
+			</div>
+
+			<!-- Columna 3: Redes y acciones -->
+			<div class="footer-redes-contacto">
+				<h2 class="">Conectá conmigo</h2>
+				<div class="redes-links">
+					<a href="javascript:void(0)" id="copy-email" onclick="copyEmail(event)" aria-label="Copiar email">
+					<i class="fa-solid fa-envelope"></i>
+					</a>
+					<a href="javascript:void(0)" aria-label="Ver CV">
+					<i class="fa-solid fa-file"></i>
+					</a>
+					<a href="https://github.com/Mother-s-Milk" target="_blank" aria-label="GitHub">
+					<i class="fa-brands fa-github"></i>
+					</a>
+					<a href="https://www.linkedin.com/in/francovera07/" target="_blank" aria-label="LinkedIn">
+					<i class="fa-brands fa-linkedin-in"></i>
+					</a>
+				</div>
 			</div>
 		</div>
 	</footer>
 
+
 	<!-- Modal -->
-	<div id="emailModal" class="modal">
+	<!-- <div id="emailModal" class="modal">
   		<div class="modal-content">
   			¡Copiado!
     	</div>
 	</div>
+	  
+	
+
+	  
+		<section id="skills-canvas"></section> -->
 	
 </body>
 </html>

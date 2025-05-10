@@ -1,3 +1,6 @@
+import anime from 'animejs/lib/anime.es.js';
+
+
 // Crear el lienzo (canvas) dentro del div de fondo
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
@@ -13,7 +16,7 @@ let stars = [];
 // Función para generar las estrellas
 function createStars() {
     stars = []; // Reinicia las estrellas existentes
-    for (let i = 0; i < 100; i++) { // 200 estrellas
+    for (let i = 0; i < 100; i++) { // 100 estrellas
         stars.push({
             x: Math.random() * canvas.width, // Posición horizontal aleatoria
             y: Math.random() * canvas.height, // Posición vertical aleatoria
@@ -53,10 +56,17 @@ function animateStars() {
 }
 
 // Ajustar el tamaño del lienzo al redimensionar la ventana
+let resizeTimeout;
 window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
+    /*canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    createStars(); // Regenerar estrellas
+    createStars();*/ // Regenerar estrellas
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      createStars();
+    }, 200);
 });
 
 // Inicializar la animación
@@ -115,3 +125,34 @@ function closeModal() {
     modal.style.display = "none";
   }, 600); // Espera a que la animación de desvanecimiento termine
 }
+
+
+
+
+const blobs = document.querySelectorAll('.blob');
+
+    blobs.forEach((blob) => {
+      animateBlob(blob);
+    });
+
+    function animateBlob(el) {
+      gsap.to(el, {
+        x: () => gsap.utils.random(-200, 200),
+        y: () => gsap.utils.random(-150, 150),
+        duration: gsap.utils.random(4, 8),
+        ease: "sine.inOut",
+        onComplete: () => animateBlob(el)
+      });
+    }
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      anime({
+        targets: '#hero-title',
+        translateY: [-50, 0],
+        opacity: [0, 1],
+        duration: 2000,
+        easing: 'easeOutElastic(1, .8)'
+      });
+    });
