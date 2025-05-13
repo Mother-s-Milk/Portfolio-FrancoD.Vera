@@ -1,126 +1,191 @@
-/*import { setupCanvasStars } from './canvas-stars.js';
-import { setupCopyEmail } from './copy-email.js';
-import { setupBlobs } from './blobs-animation.js';
-import { setupHeroAnimation } from './hero-animation.js';*/
-
 document.addEventListener('DOMContentLoaded', () => {
-  function ajustarAlturaHero() {
-    const nav = document.querySelector('.principal-nav');
-    const hero = document.querySelector('.hero');
-  
-    if (nav && hero) {
-      const navHeight = nav.offsetHeight;
-      hero.style.minHeight = `calc(100vh - ${navHeight}px)`;
+    function ajustarAlturaHero() {
+        const nav = document.querySelector('.principal-nav');
+        const hero = document.querySelector('.hero');
+    
+        if (nav && hero) {
+            const navHeight = nav.offsetHeight;
+            hero.style.minHeight = `calc(100vh - ${navHeight}px)`;
+        }
     }
-  }
-  
-  // Ejecutar al cargar y al cambiar tamaño
-  window.addEventListener('load', ajustarAlturaHero);
-  window.addEventListener('resize', ajustarAlturaHero);
-    /*setupCanvasStars();    // Asegúrate de que esta función esté definida
-    setupCopyEmail();      // Asegúrate de que esta función esté definida
-    setupBlobs();          // Asegúrate de que esta función esté definida
-    setupHeroAnimation();  // Asegúrate de que esta función esté definida
-  
-    anime({
-      targets: '.skill-bubble',
-      translateY: [100, 0],
-      opacity: [0, 1],
-      delay: anime.stagger(200),
-      duration: 1200,
-      easing: 'easeOutElastic(1, .8)'
+    
+    // Ejecutar al cargar y al cambiar tamaño
+    window.addEventListener('load', ajustarAlturaHero);
+    window.addEventListener('resize', ajustarAlturaHero);
+
+    /**/
+    // Animación de entrada para los botones
+    gsap.from(".buttons-hero a", {
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top center",
+      }
     });
-  
-    // Movimiento flotante de burbujas
-    function floatSkills() {
-      anime({
-        targets: '.skill-bubble',
-        translateY: [
-          { value: '-10', duration: 2000 },
-          { value: '10', duration: 2000 }
-        ],
-        direction: 'alternate',
-        loop: true,
-        easing: 'easeInOutSine'
+
+    /**/
+    const starsContainer = document.querySelector('.stars-container');
+    const shootingStar = document.querySelector('.shooting-star');
+
+    // Estrellas normales
+    const numStars = 120;
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      const size = Math.random() * 2 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${2 + Math.random() * 3}s`;
+      starsContainer.appendChild(star);
+    }
+
+    // Estrella fugaz ocasional
+    /*function launchShootingStar() {
+      shootingStar.style.opacity = 1;
+      shootingStar.style.top = `${Math.random() * 20 + 10}%`;
+      shootingStar.style.left = `${Math.random() * 20 + 10}%`;
+
+      shootingStar.animate([
+        { transform: 'translate(0, 0)', opacity: 1 },
+        { transform: 'translate(300px, 100px)', opacity: 0 }
+      ], {
+        duration: 1200,
+        easing: 'ease-out',
+        fill: 'forwards'
       });
+
+      setTimeout(() => {
+        shootingStar.style.opacity = 0;
+      }, 1300);
     }
-  
-    floatSkills(); // Llamada a la animación de flotación de burbujas
-  
-    // 1. Crear escena, cámara y renderer de Three.js
+
+    // Disparar cada 10-20 segundos aleatoriamente
+    setInterval(() => {
+      if (Math.random() > 0.5) launchShootingStar();
+    }, 10000);*/
+
+    /*******/
+    /*Three*/
+    /*******/
+    // Escena, cámara y renderizador
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+    camera.position.z = 500;
+
+    const renderer = new THREE.WebGLRenderer({
+        canvas: document.getElementById('bg-canvas'),
+        antialias: true,
+        alpha: true
+    });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('skills-canvas').appendChild(renderer.domElement);
-  
-    camera.position.z = 20;
-  
-    // 2. Crear array de skills
-    const skills = [
-      'HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'React', 'Node.js', 'Git',
-      'Sass', 'MongoDB', 'TypeScript', 'Next.js', 'Docker'
-    ];
-  
-    const skillMeshes = [];
-  
-    const createSkillText = (text) => {
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
-      canvas.width = 512;
-      canvas.height = 256;
-      context.fillStyle = '#ffffff';
-      context.font = 'bold 48px sans-serif';
-      context.textAlign = 'center';
-      context.fillText(text, canvas.width / 2, canvas.height / 2 + 16);
-  
-      const texture = new THREE.CanvasTexture(canvas);
-      const material = new THREE.SpriteMaterial({ map: texture });
-      const sprite = new THREE.Sprite(material);
-      sprite.scale.set(4, 2, 1); // Tamaño del texto
-  
-      return sprite;
-    };
-  
-    // 3. Crear cada skill en posiciones aleatorias
-    skills.forEach(skill => {
-      const skillMesh = createSkillText(skill);
-      skillMesh.position.set(
-        (Math.random() - 0.5) * 30,
-        (Math.random() - 0.5) * 30,
-        (Math.random() - 0.5) * 30
-      );
-      scene.add(skillMesh);
-      skillMeshes.push(skillMesh);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    // ========== Iluminación ==========
+    scene.add(new THREE.AmbientLight(0x404040, 1.5));
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(50, 50, 100);
+    scene.add(light);
+
+    // ========== Estrellas ==========
+    const starsGeometry = new THREE.BufferGeometry();
+    const starCount = 1000;
+    const starPositions = new Float32Array(starCount * 3);
+
+    for (let i = 0; i < starCount * 3; i++) {
+        starPositions[i] = (Math.random() - 0.5) * 2000;
+    }
+
+    starsGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+    const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 1 });
+    const stars = new THREE.Points(starsGeometry, starsMaterial);
+    scene.add(stars);
+
+    // ========== Luna ==========
+    const textureLoader = new THREE.TextureLoader();
+    const moonTexture = textureLoader.load('img/textura-luna.jpg');
+    const moon = new THREE.Mesh(
+        new THREE.SphereGeometry(50, 64, 64),
+        new THREE.MeshStandardMaterial({ map: moonTexture })
+    );
+    moon.position.set(0, 0, 0);
+    scene.add(moon);
+
+    // ========== Interacción ==========
+    let scrollY = 0;
+    window.addEventListener('scroll', () => {
+      scrollY = window.scrollY;
     });
-  
-    // 4. Animar entrada con anime.js
-    anime({
-      targets: skillMeshes,
-      scale: [0, 1],
-      delay: anime.stagger(100),
-      duration: 2000,
-      easing: 'easeOutElastic(1, .5)'
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
     });
-  
-    // 5. Rotar la escena lentamente
+
+    // ========== Animación ==========
     function animate() {
       requestAnimationFrame(animate);
-  
-      // Animación de rotación de la escena
-      scene.rotation.y += 0.001;
-      scene.rotation.x += 0.0005;
-  
+
+      stars.rotation.y = scrollY * 0.001;
+
+      camera.position.x += (mouseX * 10 - camera.position.x) * 0.05;
+      camera.position.y += (-mouseY * 10 - camera.position.y) * 0.05;
+      camera.lookAt(scene.position);
+
       renderer.render(scene, camera);
     }
-  
-    animate(); // Iniciar animación de la escena
 
-    // 6. Responsive
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
+    animate();
+
+
+    /*const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-  });*/
+    document.body.appendChild(renderer.domElement);
 
+    const light = new THREE.AmbientLight(0xffffff, 1);
+    scene.add(light);
+
+    const loader = new THREE.TextureLoader();
+
+    // ESTRELLAS
+    const starGeometry = new THREE.BufferGeometry();
+    const starCount = 1000;
+    const starVertices = [];
+    for (let i = 0; i < starCount; i++) {
+      starVertices.push(
+        (Math.random() - 0.5) * 200,
+        (Math.random() - 0.5) * 200,
+        (Math.random() - 0.5) * 200
+      );
+    }
+    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+    const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.7 });
+    const starField = new THREE.Points(starGeometry, starMaterial);
+    scene.add(starField);
+
+    //camera.position.z = 100;
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      starField.rotation.y += 0.0005;
+      renderer.render(scene, camera);
+    }
+    animate();*/
 });
