@@ -4,11 +4,9 @@ Bienvenido a mi portafolio personal, una representación de mi trayectoria como 
 
 ## 💡 Tecnologías Utilizadas
 
-<p>
-  <img src="https://cdn.simpleicons.org/html5/E34F26" height="30" alt="HTML5" />
-  <img src="https://cdn.simpleicons.org/css3/1572B6" height="30" alt="CSS3" />
-  <img src="https://cdn.simpleicons.org/javascript/FFD700" height="30" alt="JavaScript" />
-</p>
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ## 🎯 Características del proyecto
 
