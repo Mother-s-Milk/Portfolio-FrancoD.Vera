@@ -2,7 +2,7 @@
 
 Bienvenido a mi portafolio personal, una representación de mi trayectoria como desarrollador web. Este sitio está diseñado para mostrar mis proyectos, habilidades y experiencia.
 
-## 🖥️ Tecnologías Utilizadas
+## 📦 Tecnologías Utilizadas
 
 - **HTML5**: Estructura semántica del contenido.
 - **CSS3**: Estilos y diseño responsivo.
@@ -12,3 +12,5 @@ Bienvenido a mi portafolio personal, una representación de mi trayectoria como 
 
 - **Diseño Responsivo**: Adaptabilidad a diferentes dispositivos y tamaños de pantalla.
 - **Interactividad**: Funcionalidades como copiar correo electrónico al portapapeles y animaciones al pasar el cursor.
+
+🔗 **Versión en vivo**: [Ver portfolio online](https://tuusuario.github.io/Portfolio-FrancoD.Vera/)
