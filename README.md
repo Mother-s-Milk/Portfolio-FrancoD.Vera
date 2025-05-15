@@ -11,6 +11,15 @@ Bienvenido a mi portafolio personal, una representación de mi trayectoria como 
 ![Frontend](https://img.shields.io/badge/Frontend-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 
+<p align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" /> 
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" />
+</p>
+
+
+
 ## 🎯 Características del proyecto
 
 - **Diseño Responsivo**: Adaptabilidad a diferentes dispositivos y tamaños de pantalla.
