@@ -1,6 +1,6 @@
 # 🌐 Portfolio de Franco D. Vera
 
-Bienvenido a mi portafolio personal, una representación de mi trayectoria como desarrollador web. Este sitio está diseñado para mostrar mis proyectos, habilidades y experiencia.
+Bienvenido a mi portafolio personal, una representación de mi trayectoria como desarrollador. Este sitio está diseñado para mostrar mis proyectos, habilidades y experiencia.
 
 ## 💡 Tecnologías Utilizadas
 
