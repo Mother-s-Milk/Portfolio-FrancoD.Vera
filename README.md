@@ -4,9 +4,9 @@ Bienvenido a mi portafolio personal, una representación de mi trayectoria como 
 
 ## 💡 Tecnologías Utilizadas
 
-- **HTML5**: Estructura semántica del contenido.
-- **CSS3**: Estilos y diseño responsivo.
-- **JavaScript**: Funcionalidades dinámicas e interactivas.
+<img src="https://cdn.simpleicons.org/javascript/FFD700" height="30" alt="JavaScript" />
+<img src="https://cdn.simpleicons.org/html5/E34F26" height="30" alt="HTML5" />
+<img src="https://cdn.simpleicons.org/css3/1572B6" height="30" alt="CSS3" />
 
 ## 🎯 Características del proyecto
 
