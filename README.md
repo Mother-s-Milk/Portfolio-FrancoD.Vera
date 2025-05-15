@@ -4,9 +4,7 @@ Bienvenido a mi portafolio personal, una representación de mi trayectoria como 
 
 ## 💡 Tecnologías Utilizadas
 
-<img src="https://cdn.simpleicons.org/javascript/FFD700" height="30" alt="JavaScript" />
-<img src="https://cdn.simpleicons.org/html5/E34F26" height="30" alt="HTML5" />
-<img src="https://cdn.simpleicons.org/css3/1572B6" height="30" alt="CSS3" />
+<p> <img src="https://cdn.simpleicons.org/javascript/FFD700" height="30" alt="JavaScript" /> <img src="https://cdn.simpleicons.org/html5/E34F26" height="30" alt="HTML5" /> <img src="https://cdn.simpleicons.org/css3/1572B6" height="30" alt="CSS3" /> <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" height="30" alt="TailwindCSS" /> <img src="https://cdn.simpleicons.org/react/61DAFB" height="30" alt="React" /> </p>
 
 ## 🎯 Características del proyecto
 
