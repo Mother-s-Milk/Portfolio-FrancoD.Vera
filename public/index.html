@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<!-- Puto el que lee :) -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Franco Vera | Desarrollador Full-Stack</title>
 
-	<!-- Estilos -->
-	<link rel="stylesheet" type="text/css" href="estilos.css">
-	<script defer type="module" src="main.js"></script>
-
 	<!-- Favicon estándar -->
-  	<link rel="icon" href="img/icono.png" type="image/x-icon">
+  	<link rel="icon" href="app/img/icono.png" type="image/x-icon">
 
 	<!-- Metadatos -->
 	<meta name="description" content="Portfolio de Franco Vera, desarrollador web full-stack.">
     <meta name="keywords" content="portfolio, desarrollador web, Franco D. Vera, software, developer">
     <meta name="author" content="Franco Vera">
+
 	<meta property="og:title" content="Portfolio de Franco Vera - Desarrollador web full-stack.">
     <meta property="og:description" content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explorá mis proyectos y tecnologías.">
 	<meta property="og:image" content="https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
     <meta property="og:url" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
     <meta property="og:type" content="website">
+
+	<!-- Estilos -->
+	<link rel="stylesheet" type="text/css" href="app/css/estilos.css">
 
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,20 +30,16 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	<!-- Three.js -->
-	<script defer src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 	<!-- GSAP + ScrollTrigger -->
 	<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+	<!-- Scripts -->
+	<script defer type="module" src="app/js/main.js"></script>
 </head>
 <body>
-	<!-- <div class="scroll-section"></div> -->
-	<!-- <div class="stars-container"></div>
-	<div class="moon"></div>
-	<div class="shooting-star"></div> -->
-
 	<header class="principal-header">
-		<button type="button">Menu</button>
+		<button type="button" id="btn-menu"><i class="fa-solid fa-bars"></i></button>
 		<nav class="principal-nav">
 			<ul>
 				<li><a href="javascript:void(0)">Inicio</a></li>
@@ -71,7 +66,7 @@
 		<section class="container section" id="sobre-mi">
 			<main class="sobre-mi-main">
 				<div class="img-sobre-mi">
-					<img src="img/yo.webp" alt="Foto de Franco Veta">
+					<img src="app/img/yo.webp" alt="Foto de Franco Veta">
 				</div>
 				<div class="info-sobre-mi">
 					<header>
@@ -142,70 +137,19 @@
 				<h1 class="titulo-seccion">Proyectos</h1>
 				<p>Una selección de proyectos donde aplico mis habilidades para resolver problemas reales y crear experiencias web funcionales.</p>
 			</header>
-			<main class="proyectos">
-				<article class="tarjeta-proyecto">
+			<div class="filtros">
+				<button type="button" id="filtro-todos" class="active">Todos</button>
+				<button type="button" id="filtro-front">Front</button>
+				<button type="button" id="filtro-back">Back</button>
+				<button type="button" id="filtro-fullstack">Fullstack</button>
+			</div>
+			<main class="proyectos" id="main-proyectos">
+				<!-- <article class="tarjeta-proyecto" data-tipo="front">
 					<div class="tarjeta-proyecto-imagen">
-						<img src="img/screen-app-clubdelahamburguesa.png" alt="Proyecto 1: Licorería">
-					</div>
-					<h1>Sistema web "Club de la Hamburguesa"</h1>
-					<p>Un sistema para la gestión de una licorería que permite manejar inventario, ventas y proveedores. Además, facilita las operaciones diarias. El proyecto integra backend y frontend robustos</p>
-					<div class="tarjeta-proyecto-tecnologias">
-						<span class="tag-html"><i class="fa-brands fa-html5"></i>HTML</span>
-						<span class="tag-css"><i class="fa-brands fa-css3-alt"></i>CSS</span>
-						<span class="tag-js"><i class="fa-brands fa-js"></i>JavaScript</span>
-						<span class="tag-php"><i class="fa-brands fa-php"></i>PHP</span>
-						<span class="tag-mysql"><i class="fa-solid fa-database"></i>MySQL</span>
-						<span class="tag-git"><i class="fa-brands fa-git-alt"></i>GIT</span>
-					</div>
-					<div class="links-repositorio">
-						<a class="btn-sitio" href="#" title="Ver sitio web" rel="noopener noreferrer"><i class="fa-solid fa-link"></i></a>
-						<a class="btn-github" href="https://github.com/Mother-s-Milk/reservaPrivada" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
-					</div>
-				</article>
-				<article class="tarjeta-proyecto">
-					<div class="tarjeta-proyecto-imagen">
-						<img src="img/screen-web-clubdelahamburguesa.png" alt="Proyecto 1: Licorería">
-					</div>
-					<h1>Sistema web "Club de la Hamburguesa"</h1>
-					<p>Un sistema para la gestión de una licorería que permite manejar inventario, ventas y proveedores. Además, facilita las operaciones diarias. El proyecto integra backend y frontend robustos</p>
-					<div class="tarjeta-proyecto-tecnologias">
-						<span class="tag-html"><i class="fa-brands fa-html5"></i>HTML</span>
-						<span class="tag-css"><i class="fa-brands fa-css3-alt"></i>CSS</span>
-						<span class="tag-js"><i class="fa-brands fa-js"></i>JavaScript</span>
-						<span class="tag-php"><i class="fa-brands fa-php"></i>PHP</span>
-						<span class="tag-mysql"><i class="fa-solid fa-database"></i>MySQL</span>
-						<span class="tag-git"><i class="fa-brands fa-git-alt"></i>GIT</span>
-					</div>
-					<div class="links-repositorio">
-						<a class="btn-sitio" href="#" title="Ver sitio web" rel="noopener noreferrer"><i class="fa-solid fa-link"></i></a>
-						<a class="btn-github" href="https://github.com/Mother-s-Milk/reservaPrivada" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
-					</div>
-				</article>
-				<article class="tarjeta-proyecto">
-					<div class="tarjeta-proyecto-imagen">
-						<img src="img/proyecto.png" alt="Proyecto 1: Licorería">
-					</div>
-					<h1>Sistema web "Reserva Privada"</h1>
-					<p>Un sistema para la gestión de una licorería que permite manejar inventario, ventas y proveedores. Además, facilita las operaciones diarias. El proyecto integra backend y frontend robustos</p>
-					<div class="tarjeta-proyecto-tecnologias">
-						<span class="tag-html"><i class="fa-brands fa-html5"></i>HTML</span>
-						<span class="tag-css"><i class="fa-brands fa-css3-alt"></i>CSS</span>
-						<span class="tag-js"><i class="fa-brands fa-js"></i>JavaScript</span>
-						<span class="tag-php"><i class="fa-brands fa-php"></i>PHP</span>
-						<span class="tag-mysql"><i class="fa-solid fa-database"></i>MySQL</span>
-						<span class="tag-git"><i class="fa-brands fa-git-alt"></i>GIT</span>
-					</div>
-					<div class="links-repositorio">
-						<a class="btn-sitio" href="#" title="Ver sitio web" rel="noopener noreferrer"><i class="fa-solid fa-link"></i></a>
-						<a class="btn-github" href="https://github.com/Mother-s-Milk/reservaPrivada" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
-					</div>
-				</article>
-				<article class="tarjeta-proyecto">
-					<div class="tarjeta-proyecto-imagen">
-						<img src="img/screen-web-pizzafusion.png" alt="Proyecto 2: Pizza Fusión">
+						<img src="img/screen-web-pizzafusion.png" alt="Proyecto: Pizza Fusión">
 					</div>
 					<h1>"Pizza Fusión": Sitio Web con carrito de compras</h1>
-					<p>Un sitio web interactivo para una pizzería. Ofrece a los usuarios la posibilidad de explorar el menú completo, armar su carro de compras y enviar el pedido con los detalles a WhatsApp.</p>
+					<p>Un sitio web interactivo para una pizzería. Ofrece a los usuarios la posibilidad de explorar el menú completo, armar su carro de compras mediante LocalStorage y enviar el pedido con los detalles a WhatsApp.</p>
 					<div class="tarjeta-proyecto-tecnologias">
 						<span class="tag-html"><i class="fa-brands fa-html5"></i>HTML</span>
 						<span class="tag-css"><i class="fa-brands fa-css3-alt"></i>CSS</span>
@@ -216,7 +160,7 @@
 						<a class="btn-sitio" href="#" title="Ver sitio web" rel="noopener noreferrer"><i class="fa-solid fa-link"></i></a>
 						<a class="btn-github" href="https://github.com/Mother-s-Milk/pizzaFusion" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
 					</div>
-				</article>
+				</article> -->
 			</main>
 		</section>
 
@@ -299,18 +243,14 @@
 		</div>
 	</footer>
 
-
 	<!-- Modal -->
 	<!-- <div id="emailModal" class="modal">
   		<div class="modal-content">
   			¡Copiado!
     	</div>
 	</div>
-	  
 	
-
-	  
-		<section id="skills-canvas"></section> -->
+	<section id="skills-canvas"></section> -->
 	
 </body>
 </html>
