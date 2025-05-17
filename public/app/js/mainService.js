@@ -1,6 +1,6 @@
 export const mainService = {
     obtenerProyectos: () => {
-        return fetch ('../../../database/proyectos.json', {
+        return fetch ('database/proyectos.json', {
             method: "GET",
             headers: {}
         })
