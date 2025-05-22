@@ -8,17 +8,21 @@
 	<!-- Favicon estándar -->
   	<link rel="icon" href="public/app/img/icono.png" type="image/x-icon">
 
-	<!-- Metadatos -->
+	<!-- SEO -->
 	<meta name="description" content="Portfolio de Franco Vera, desarrollador web full-stack.">
     <meta name="keywords" content="portfolio, desarrollador web, Franco D. Vera, software, developer">
     <meta name="author" content="Franco Vera">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
 
+	<!-- Open Graph -->
 	<meta property="og:title" content="Portfolio de Franco Vera - Desarrollador web full-stack.">
     <meta property="og:description" content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explorá mis proyectos y tecnologías.">
 	<meta property="og:image" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/public/app/img/logo.png">
     <meta property="og:url" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
     <meta property="og:type" content="website">
 
+	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Portfolio de Franco Vera - Desarrollador web full-stack.">
 	<meta name="twitter:description" content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explorá mis proyectos y tecnologías.">
@@ -27,9 +31,6 @@
 
 	<!-- Estilos -->
 	<link rel="stylesheet" type="text/css" href="public/app/css/estilos.css">
-
-	<!--  -->
-	<base href="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
 
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +62,6 @@
 	</header>
 
 	<main>
-
 		<section class="hero">
 			<div class="hero-content">
 				<h1>¡Hola! Soy Franco, desarrollador full-stack.</h1>
@@ -146,30 +146,13 @@
 				<h1 class="titulo-seccion">Proyectos</h1>
 				<p>Una selección de proyectos donde aplico mis habilidades para resolver problemas reales y crear experiencias web funcionales.</p>
 			</header>
-			<div class="filtros">
-				<button type="button" id="filtro-todos" class="active">Todos</button>
-				<button type="button" id="filtro-front">Front</button>
-				<button type="button" id="filtro-back">Back</button>
-				<button type="button" id="filtro-fullstack">Fullstack</button>
-			</div>
-			<main class="proyectos" id="main-proyectos">
-				<!-- <article class="tarjeta-proyecto" data-tipo="front">
-					<div class="tarjeta-proyecto-imagen">
-						<img src="img/screen-web-pizzafusion.png" alt="Proyecto: Pizza Fusión">
-					</div>
-					<h1>"Pizza Fusión": Sitio Web con carrito de compras</h1>
-					<p>Un sitio web interactivo para una pizzería. Ofrece a los usuarios la posibilidad de explorar el menú completo, armar su carro de compras mediante LocalStorage y enviar el pedido con los detalles a WhatsApp.</p>
-					<div class="tarjeta-proyecto-tecnologias">
-						<span class="tag-html"><i class="fa-brands fa-html5"></i>HTML</span>
-						<span class="tag-css"><i class="fa-brands fa-css3-alt"></i>CSS</span>
-						<span class="tag-js"><i class="fa-brands fa-js"></i>JavaScript</span>
-						<span class="tag-php"><i class="fa-brands fa-php"></i>PHP</span>
-					</div>
-					<div class="links-repositorio">
-						<a class="btn-sitio" href="#" title="Ver sitio web" rel="noopener noreferrer"><i class="fa-solid fa-link"></i></a>
-						<a class="btn-github" href="https://github.com/Mother-s-Milk/pizzaFusion" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
-					</div>
-				</article> -->
+			<main class="proyectos" id="projects-main">
+				<!-- <div class="filtros">
+					<button type="button" id="filtro-todos" class="active">Todos</button>
+					<button type="button" id="filtro-front">Front</button>
+					<button type="button" id="filtro-back">Back</button>
+					<button type="button" id="filtro-fullstack">Fullstack</button>
+				</div> -->
 			</main>
 		</section>
 

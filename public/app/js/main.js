@@ -1,32 +1,26 @@
-import { mainService } from "./mainService.js";
+import { service } from "./service.js";
 
-const mainController = {
-    proyectos: [],
-    front: [],
-    back: [],
-    fullstack: [],
-    obtenerProyectos: () => {
-        mainService.obtenerProyectos()
+const controller = {
+    getProjects: () => {
+        service.getProjects()
             .then(response => {
-                console.log('Response: ', response);
-                mainController.mostrarProyectos(response);
+                console.log('Proyectos cargados: ', response);
+                controller.renderProyects(response)
             })
-            .catch(error => {
-                console.log('Error: ', error);
-            })
+            .catch(error => console.log('Error al cargar los proyectos: ', error))
     },
-    mostrarProyectos: (proyectos) => {
-        //console.log(proyectos);
-        let mainProyectos = document.getElementById('main-proyectos');
+    renderProyects: (projects) => {
+        let projectsMain = document.getElementById('projects-main');
 
-        proyectos.forEach(element => {
+        projects.forEach(element => {
             // Generar las tecnologías de forma dinámica
-            let tecnologiasHTML = '';
-            element.tecnologias.forEach(tec => {
+            let technologies = '';
+
+            element.technologies.forEach(tech => {
                 let iconClass = '';
                 let iconFamily = '';
 
-                switch (tec.toLowerCase()) {
+                switch (tech.toLowerCase()) {
                     case 'html':
                         iconFamily = 'fa-brands';
                         iconClass = 'fa-html5';
@@ -53,45 +47,45 @@ const mainController = {
                         break;
                     default:
                         iconFamily = 'fa-solid';
-                        iconClass = 'fa-circle-question'; // ícono genérico de "desconocido"
+                        iconClass = 'fa-circle-question';
                 }
 
-                tecnologiasHTML += `
-                    <span class="tag-${tec.toLowerCase()}">
-                        <i class="${iconFamily} ${iconClass}"></i>${tec}
+                technologies += `
+                    <span class="tag-${tech.toLowerCase()}">
+                        <i class="${iconFamily} ${iconClass}"></i>${tech}
                     </span>
                 `;
             });
-            console.log(element);
-            let nuevaTarjeta = `
-                <article class="tarjeta-proyecto" data-tipo="${element.tipo}">
-                    <div class="tarjeta-proyecto-imagen">
-                        <img src="${element.imagen}" alt="${element.titulo}">
+
+            let newCard = `
+                <article class="project-card" data-tipo="${element.type}">
+                    <div class="project-card-image">
+                        <img src="${element.img}" alt="${element.tittle}">
                     </div>
-                    <h1>${element.titulo}</h1>
-                    <p>${element.descripcion}</p>
-                    <div class="tarjeta-proyecto-tecnologias">
-                        ${tecnologiasHTML}
+                    <h1>${element.tittle}</h1>
+                    <p>${element.description}</p>
+                    <div class="project-card-technologies">
+                        ${technologies}
                     </div>
-                    <div class="links-repositorio">
-                        <a class="btn-sitio" href="${element.sitio}" title="Ver sitio web" rel="noopener noreferrer">
+                    <div class="repository-links">
+                        <a class="btn-site" href="${element.site}" title="Ver sitio web" rel="noopener noreferrer">
                             <i class="fa-solid fa-link"></i>
                         </a>
-                        <a class="btn-github" href="${element.repositorio}" target="_blank" rel="noopener noreferrer">
+                        <a class="btn-github" href="${element.repository}" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-github-alt"></i>
                         </a>
                     </div>
                 </article>
             `;
 
-            mainProyectos.insertAdjacentHTML('beforeend', nuevaTarjeta);
+            projectsMain.insertAdjacentHTML('beforeend', newCard);
         });
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     function ajustarAlturaHero() {
-        const nav = document.querySelector('.principal-nav');
+        const nav = document.querySelector('.principal-header');
         const hero = document.querySelector('.hero');
     
         if (nav && hero) {
@@ -107,9 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
     /**/
     // Animación de entrada para los botones
     gsap.from(".buttons-hero a", {
-      y: 60,
+      y: 75,
       opacity: 0,
-      duration: 1,
+      duration: 1.5,
       stagger: 0.3,
       ease: "power2.out",
       scrollTrigger: {
@@ -119,14 +113,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /*Boton y barra de navegacion responsive*/
-    let btnMenu = document.getElementById('btn-menu');
+    /*let btnMenu = document.getElementById('btn-menu');
     if (btnMenu) {
         btnMenu.onclick = () => {
             let principalNav = document.querySelector('.principal-nav');
             principalNav.classList.toggle('show-menu');
         }
-    }
+    }*/
 
     /**/
-    mainController.obtenerProyectos();
+    controller.getProjects();
+    /**/
+
+    const sidebar = document.querySelector(".principal-nav");
+    const toggleButton = document.getElementById("btn-menu");
+
+    toggleButton.addEventListener("click", () => {
+        // Alternar entre los estados 'collapsed' y 'expanded'
+        if (sidebar.classList.contains("collapsed")) {
+            sidebar.classList.remove("collapsed");
+        } else {
+            sidebar.classList.add("collapsed");
+        }
+    });
 });
