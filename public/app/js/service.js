@@ -1,6 +1,7 @@
 export const service = {
     getProjects: () => {
-        return fetch ('https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/database/projects.json', {
+        //return fetch ('https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/database/projects.json', {
+        return fetch ('../../../database/projects.json', {
             method: "GET",
             headers: {}
         })
@@ -11,7 +12,7 @@ export const service = {
             return response.json();
         })
         .then((data) => {
-            return data;
+            return data.projects;
         })
         .catch((error) => {
             console.error("Error en la petición: ", error);

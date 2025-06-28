@@ -1,36 +1,48 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Franco Vera | Desarrollador Full-Stack</title>
 
 	<!-- Favicon estándar -->
-  	<link rel="icon" href="public/app/img/icono.png" type="image/x-icon">
+	<link rel="icon" href="public/app/img/icono.png" type="image/x-icon">
 
 	<!-- SEO -->
 	<meta name="description" content="Portfolio de Franco Vera, desarrollador web full-stack.">
-    <meta name="keywords" content="portfolio, desarrollador web, Franco D. Vera, software, developer">
-    <meta name="author" content="Franco Vera">
+	<meta name="keywords" content="portfolio, desarrollador web, Franco D. Vera, software, developer">
+	<meta name="author" content="Franco Vera">
 	<meta name="robots" content="index, follow">
 	<link rel="canonical" href="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
 
 	<!-- Open Graph -->
 	<meta property="og:title" content="Portfolio de Franco Vera - Desarrollador web full-stack.">
-    <meta property="og:description" content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explorá mis proyectos y tecnologías.">
+	<meta property="og:description"
+		content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explorá mis proyectos y tecnologías.">
 	<meta property="og:image" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/public/app/img/logo.png">
-    <meta property="og:url" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
-    <meta property="og:type" content="website">
+	<meta property="og:url" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
+	<meta property="og:type" content="website">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Portfolio de Franco Vera - Desarrollador web full-stack.">
-	<meta name="twitter:description" content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explorá mis proyectos y tecnologías.">
+	<meta name="twitter:description"
+		content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explorá mis proyectos y tecnologías.">
 	<meta name="twitter:image" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/public/app/img/logo.png">
 	<meta name="twitter:url" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
 
 	<!-- Estilos -->
-	<link rel="stylesheet" type="text/css" href="public/app/css/estilos.css">
+	<link rel="stylesheet" type="text/css" href="public/app/css/main.css">
+	<link rel="stylesheet" type="text/css" href="public/app/css/header.css">
+	<link rel="stylesheet" type="text/css" href="public/app/css/hero.css">
+	<link rel="stylesheet" type="text/css" href="public/app/css/about.css">
+	<link rel="stylesheet" type="text/css" href="public/app/css/skills.css">
+	<link rel="stylesheet" type="text/css" href="public/app/css/projects.css">
+	<link rel="stylesheet" type="text/css" href="public/app/css/footer.css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="public/app/assets/fontAwesome/css/all.min.css">
 
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +50,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
 	<!-- GSAP + ScrollTrigger -->
 	<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
@@ -47,118 +61,148 @@
 	<!-- Scripts -->
 	<script defer type="module" src="public/app/js/main.js"></script>
 </head>
+
 <body>
-	<header class="principal-header">
-		<button type="button" id="btn-menu"><i class="fa-solid fa-bars"></i></button>
-		<nav class="principal-nav">
-			<ul>
-				<li><a href="javascript:void(0)">Inicio</a></li>
-				<li><a href="#sobre-mi">Sobre mi</a></li>
-				<li><a href="#herramientas">Herramientas</a></li>
-				<li><a href="#proyectos">Proyectos</a></li>
-				<li><a href="#contacto">Contacto</a></li>
-			</ul>
-		</nav>
-	</header>
+	<div class="body-content">
+		<header class="principal-header">
+			<button type="button" id="btn-menu" class="btn-menu" aria-expanded="false" aria-controls="menu-desplegable"><i class="fa-solid fa-bars"></i></button>
+			<nav class="principal-nav">
+				<ul class="principal-navlist">
+					<li><a class="nav-link" href="javascript:void(0)">Inicio</a></li>
+					<li><a class="nav-link" href="#about">Sobre mi</a></li>
+					<li><a class="nav-link" href="#tools">Herramientas</a></li>
+					<li><a class="nav-link" href="#projects">Proyectos</a></li>
+					<li><a class="nav-link" href="#contact">Contacto</a></li>
+				</ul>
+			</nav>
 
-	<main>
-		<section class="hero">
-			<div class="hero-content">
-				<h1>¡Hola! Soy Franco, desarrollador full-stack.</h1>
-				<p>Creo soluciones web modernas, escalables y centradas en el usuario para negocios de todos los tamaños.</p>
-				<footer class="buttons-hero">
-					<a href="#proyectos">Ver proyectos</a>
-					<a href="">Contactáme</a>
-				</footer>
+			<nav id="menu-desplegable" class="menu-desplegable" aria-label="Menú móvil">
+                <ul class="mobile-nav">
+                    <li><a class="mobile-nav-link" href="javascript:void(0)">Inicio</a></li>
+					<li><a class="mobile-nav-link" href="#about">Sobre mi</a></li>
+					<li><a class="mobile-nav-link" href="#tools">Herramientas</a></li>
+					<li><a class="mobile-nav-link" href="#projects">Proyectos</a></li>
+					<li><a class="mobile-nav-link" href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div class="hero-content">
+					<h1>¡Hola! Soy Franco Vera, freelance full-stack dev.</h1>
+					<p>Creo soluciones web modernas, escalables y centradas en el usuario para negocios de todos los tamaños.</p>
+					<div class="buttons-hero">
+						<a href="#projects">Proyectos</a>
+						<a href="#contact">Contacto</a>
+					</div>
+				</div>
+			</section>
+
+			<div class="divider-container">
+				<hr class="divider">
 			</div>
-		</section>
-		<section class="container section" id="sobre-mi">
-			<main class="sobre-mi-main">
-				<div class="img-sobre-mi">
-					<img src="public/app/img/yo.webp" alt="Foto de Franco Veta">
-				</div>
-				<div class="info-sobre-mi">
-					<header>
-						<h1 class="titulo-seccion">Sobre mí</h1>
-					</header>
-					<main>
-						<p>Soy Analista de Sistemas con experiencia en el desarrollo de sistemas de información personalizados y páginas web interactivas. <br><br>Mi stack tecnológico incluye <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, <strong>Java</strong> y <strong>MySQL</strong>, lo que me permite crear aplicaciones web completas. <br><br>Poseo habilidades en diseño orientado a objetos y manejo de arquitecturas como MVC y DAO/DTO, asegurando un código limpio, modular y escalable.</p>
-					</main>
-					<footer class="links link-2">
-						<a href="javascript:void(0)" id="copy-email" onclick="copyEmail(event)"><i class="fa-solid fa-envelope"></i></a>
-						<a href="CV-VeraFranco(AdeS).pdf" download="CV-VeraFranco"><i class="fa-solid fa-file"></i></a>
-						<a href="https://github.com/Mother-s-Milk" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
-						<a href="https://www.linkedin.com/in/francovera07/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-					</footer>
-				</div>
-			</main>
-		</section>
 
-		<div class="divisor-container">
-			<hr class="divisor">
-		</div>
+			<section class="container section" id="about">
+				<header class="header-section">
+					<h2 class="title-section">Sobre mí</h2>
+					<p class="description-section">Tecnologías que uso para diseñar, desarrollar y desplegar aplicaciones web.</p>
+				</header>
+				<main class="about-me">
+					<div class="about-me-item it-1">
+						<i class="fas fa-code"></i>
+						<p class="about-me-item-text">
+							Desarrollo sistemas y plataformas web adaptadas a cada cliente, priorizando calidad y usabilidad.
+						</p>
+					</div>
+					<div class="about-me-item it-2">
+						<i class="fas fa-laptop-code"></i>
+						<p class="about-me-item-text">
+							Construyo sitios completos con HTML, CSS, JavaScript, PHP y MySQL, desde el diseño hasta el backend.
+						</p>
+					</div>
+					<div class="about-me-item it-3">
+						<i class="fas fa-cubes"></i>
+						<p class="about-me-item-text">
+							Aplico programación orientada a objetos con patrones como MVC y DAO, asegurando un código escalable.
+						</p>
+					</div>
+				</main>
+			</section>
 
-		<section class="container section" id="herramientas">
-			<header class="header-section">
-				<h1 class="titulo-seccion">Herramientas</h1>
-				<p>Tecnologías que uso para diseñar, desarrollar y desplegar aplicaciones web.</p>
-			</header>
-			<main>
+			<!-- <footer class="links link-2">
+				<a href="javascript:void(0)" id="copy-email" onclick="copyEmail(event)"><i class="fa-solid fa-envelope"></i></a>
+				<a href="CV-VeraFranco(AdeS).pdf" download="CV-VeraFranco"><i class="fa-solid fa-file"></i></a>
+				<a href="https://github.com/Mother-s-Milk" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
+				<a href="https://www.linkedin.com/in/francovera07/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+			</footer> -->
+
+			<div class="divider-container">
+				<hr class="divider">
+			</div>
+
+			<section class="container section" id="herramientas">
+				<header class="header-section">
+					<h2 class="title-section">Herramientas</h2>
+					<p class="description-section">Tecnologías que uso para diseñar, desarrollar y desplegar aplicaciones web.</p>
+				</header>
 				<div class="skills">
-					<div>
+					<div class="skill-item">
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
 						<p>HTML</p>
 					</div>
-					<div>
+					<div class="skill-item">
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
 						<p>CSS</p>
 					</div>
-					<div>
+					<div class="skill-item">
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
 						<p>JavaScript</p>
 					</div>
-					<div>
+					<div class="skill-item">
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
 						<p>PHP</p>
 					</div>
-					<div>
+					<div class="skill-item">
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
 						<p>Java</p>
 					</div>
-					<div>
+					<div class="skill-item">
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
 						<p>MySQL</p>
 					</div>
-					<div>
+					<div class="skill-item">
 						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
 						<p>GIT</p>
 					</div>
 				</div>
-			</main>
-		</section>
+			</section>
 
-		<div class="divisor-container">
-			<hr class="divisor">
-		</div>
+			<div class="divider-container">
+				<hr class="divider">
+			</div>
 
-		<section class="container section" id="proyectos">
-			<header class="header-section">
-				<h1 class="titulo-seccion">Proyectos</h1>
-				<p>Una selección de proyectos donde aplico mis habilidades para resolver problemas reales y crear experiencias web funcionales.</p>
-			</header>
-			<main class="projects" id="projects-main">
-				<!-- <div class="filtros">
-					<button type="button" id="filtro-todos" class="active">Todos</button>
-					<button type="button" id="filtro-front">Front</button>
-					<button type="button" id="filtro-back">Back</button>
-					<button type="button" id="filtro-fullstack">Fullstack</button>
-				</div> -->
-			</main>
-		</section>
+			<section class="section container" id="projects">
+				<header class="header-section">
+					<h1 class="title-section">Proyectos</h1>
+					<p class="description-section">Una selección de proyectos donde aplico mis habilidades para resolver problemas reales y crear sitios funcionales.</p>
+				</header>
+				<main class="projects">
+					<div class="filters-container">
+						<div class="filters-content">
+							<button class="filter-button active" type="button" id="filter-all">Todos</button>
+							<button class="filter-button" type="button" id="filter-front">Frontend</button>
+							<button class="filter-button" type="button" id="filter-back">Backend</button>
+							<button class="filter-button" type="button" id="filter-fullstack">Fullstack</button>
+						</div>
+					</div>
+					<div class="projects-cards" id="projects-cards"></div>
+				</main>
+			</section>
 
-		<div class="divisor-container">
-			<hr class="divisor">
-		</div>
+			<!-- <div class="divider-container">
+				<hr class="divider">
+			</div>
 
 		<section class="container section" id="formacion">
 			<header class="header-section">
@@ -190,50 +234,51 @@
 				</div>
 			</div>
 		</section>
-	</main>
-	
-	<div class="divisor-container">
-		<hr class="divisor">
-	</div>
+	</main> -->
 
-	<footer class="principal-footer">
-		<div class="footer-content container">
+		<div class="divider-container">
+			<hr class="divider">
+		</div>
 
-			<div class="info-personal">
-				<p class="">Franco Vera</p>
-				<p class="">Desarrollador Full-Stack</p>
-			</div>
+		<footer class="principal-footer">
+			<div class="footer-content container">
 
-			<div class="footer-navegacion">
-				<h2 class="">Navegación</h2>
-				<ul class="">
-					<li><a href="#inicio">Inicio</a></li>
-					<li><a href="#sobre-mi">Sobre mí</a></li>
-					<li><a href="#herramientas">Herramientas</a></li>
-					<li><a href="#proyectos">Proyectos</a></li>
-					<li><a href="#contacto">Contacto</a></li>
-				</ul>
-			</div>
+				<div class="info-personal item-2">
+					<h2 class="">Franco Vera</h2>
+					<p class="">Desarrollador Full-Stack</p>
+				</div>
 
-			<div class="footer-redes-contacto">
-				<h2 class="">Conectá conmigo</h2>
-				<div class="redes-links">
-					<a href="javascript:void(0)" id="copy-email" onclick="copyEmail(event)" aria-label="Copiar email">
-					<i class="fa-solid fa-envelope"></i>
-					</a>
-					<a href="javascript:void(0)" aria-label="Ver CV">
-					<i class="fa-solid fa-file"></i>
-					</a>
-					<a href="https://github.com/Mother-s-Milk" target="_blank" aria-label="GitHub">
-					<i class="fa-brands fa-github"></i>
-					</a>
-					<a href="https://www.linkedin.com/in/francovera07/" target="_blank" aria-label="LinkedIn">
-					<i class="fa-brands fa-linkedin-in"></i>
-					</a>
+				<div class="footer-navegacion item-1">
+					<h2 class="">Navegación</h2>
+					<ul class="">
+						<li><a href="javascript:void(0)">Inicio</a></li>
+						<li><a href="#about">Sobre mí</a></li>
+						<li><a href="#tools">Herramientas</a></li>
+						<li><a href="#projects">Proyectos</a></li>
+						<li><a href="#contact">Contacto</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-redes-contacto item-3">
+					<h2 class="">Conectá conmigo</h2>
+					<div class="redes-links">
+						<a href="javascript:void(0)" id="copy-email" onclick="copyEmail(event)" aria-label="Copiar email">
+							<i class="fa-solid fa-envelope"></i>
+						</a>
+						<a href="javascript:void(0)" aria-label="Ver CV">
+							<i class="fa-solid fa-file"></i>
+						</a>
+						<a href="https://github.com/Mother-s-Milk" target="_blank" aria-label="GitHub">
+							<i class="fa-brands fa-github"></i>
+						</a>
+						<a href="https://www.linkedin.com/in/francovera07/" target="_blank" aria-label="LinkedIn">
+							<i class="fa-brands fa-linkedin-in"></i>
+						</a>
+					</div>
 				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
+	</div>
 
 	<!-- Modal -->
 	<!-- <div id="emailModal" class="modal">
@@ -243,6 +288,7 @@
 	</div>
 	
 	<section id="skills-canvas"></section> -->
-	
+
 </body>
+
 </html>

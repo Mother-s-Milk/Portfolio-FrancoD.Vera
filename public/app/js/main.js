@@ -5,12 +5,12 @@ const controller = {
         service.getProjects()
             .then(response => {
                 console.log('Proyectos cargados: ', response);
-                controller.renderProyects(response)
+                controller.renderProjects(response)
             })
             .catch(error => console.log('Error al cargar los proyectos: ', error))
     },
-    renderProyects: (projects) => {
-        let projectsMain = document.getElementById('projects-main');
+    renderProjects: (projects) => {
+        let projectsMain = document.getElementById('projects-cards');
 
         projects.forEach(element => {
             // Generar las tecnologías de forma dinámica
@@ -29,7 +29,7 @@ const controller = {
                         iconFamily = 'fa-brands';
                         iconClass = 'fa-css3-alt';
                         break;
-                    case 'javascript':
+                    case 'js':
                         iconFamily = 'fa-brands';
                         iconClass = 'fa-js';
                         break;
@@ -58,22 +58,24 @@ const controller = {
             });
 
             let newCard = `
-                <article class="project-card" data-tipo="${element.type}">
-                    <div class="project-card-image">
-                        <img src="${element.img}" alt="${element.tittle}">
-                    </div>
-                    <h1>${element.tittle}</h1>
-                    <p>${element.description}</p>
-                    <div class="project-card-technologies">
-                        ${technologies}
-                    </div>
-                    <div class="repository-links">
-                        <a class="btn-site" href="${element.site}" title="Ver sitio web" rel="noopener noreferrer">
-                            <i class="fa-solid fa-link"></i>
-                        </a>
-                        <a class="btn-github" href="${element.repository}" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-github-alt"></i>
-                        </a>
+                <article class="project-card" data-type="${element.type}">
+                    <img class="project-card-img" src="${element.img}" alt="${element.title}">
+                    <div class="project-card-content">
+                        <div>
+                            <h1>${element.title}</h1>
+                            <p>${element.description}</p>
+                            <div class="project-card-technologies">
+                                ${technologies}
+                            </div>
+                        </div>
+                        <div class="project-card-links">
+                            <a class="btn-site" href="${element.site}" title="Ver sitio web" rel="noopener noreferrer">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                            <a class="btn-github" href="${element.repository}" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github-alt"></i>
+                            </a>
+                        </div>
                     </div>
                 </article>
             `;
@@ -84,56 +86,58 @@ const controller = {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    function ajustarAlturaHero() {
-        const nav = document.querySelector('.principal-header');
+    function adjustHeroHeight() {
+        const principalHeader = document.querySelector('.principal-header');
         const hero = document.querySelector('.hero');
-    
-        if (nav && hero) {
-            const navHeight = nav.offsetHeight;
+        if (principalHeader && hero) {
+            const navHeight = principalHeader.offsetHeight;
             hero.style.minHeight = `calc(100vh - ${navHeight}px)`;
         }
     }
     
     // Ejecutar al cargar y al cambiar tamaño
-    window.addEventListener('load', ajustarAlturaHero);
-    window.addEventListener('resize', ajustarAlturaHero);
+    window.addEventListener('load', adjustHeroHeight);
+    window.addEventListener('resize', adjustHeroHeight);
 
-    /**/
-    // Animación de entrada para los botones
+    /*                                */
+    /* Animation for the hero buttons */
+    /*                                */
     gsap.from(".buttons-hero a", {
-      y: 75,
-      opacity: 0,
-      duration: 1.5,
-      stagger: 0.3,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top center",
-      }
+        y: 75,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.3,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top center",
+        }
     });
 
-    /*Boton y barra de navegacion responsive*/
-    /*let btnMenu = document.getElementById('btn-menu');
-    if (btnMenu) {
-        btnMenu.onclick = () => {
-            let principalNav = document.querySelector('.principal-nav');
-            principalNav.classList.toggle('show-menu');
-        }
-    }*/
-
-    /**/
+    /* */
     controller.getProjects();
-    /**/
+    /* */
 
-    const sidebar = document.querySelector(".principal-nav");
+    /*     */
+    /* NAV */
+    /*     */
+    const navbar = document.querySelector(".menu-desplegable");
     const toggleButton = document.getElementById("btn-menu");
+    const links = document.querySelectorAll(".mobile-nav-link");
 
     toggleButton.addEventListener("click", () => {
-        // Alternar entre los estados 'collapsed' y 'expanded'
-        if (sidebar.classList.contains("collapsed")) {
-            sidebar.classList.remove("collapsed");
-        } else {
-            sidebar.classList.add("collapsed");
-        }
+        const isOpen = navbar.classList.toggle("show-menu");
+        document.body.style.overflow = isOpen ? "hidden" : "auto";
+        toggleButton.setAttribute("aria-expanded", isOpen);
     });
+
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            navbar.classList.remove("show-menu");
+            document.body.style.overflow = "auto";
+            toggleButton.setAttribute("aria-expanded", false);
+        });
+    });
+
+
 });

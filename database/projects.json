@@ -1,38 +1,68 @@
-[
-  {
-    "type": "fullstack",
-    "tittle": "Sistema web \"Club de la Hamburguesa\"",
-    "description": "Software para el control de una hamburguesería estilo CRUD que cuenta, entre otras cosas, con sistema de login y un TPV que usa los productos cargados en la base de datos para realizar ventas.",
-    "img": "public/app/img/proyectos/screen-app-clubdelahamburguesa.png",
-    "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "GIT"],
-    "site": "#",
-    "repository": "https://github.com/Mother-s-Milk/reservaPrivada"
-  },
-  {
-    "type": "front",
-    "tittle": "Página web para \"Club de la Hamburguesa\"",
-    "description": "Esta página está enlazada con el sistema del mismo nombre. Carga los productos dinamicamente haciendo peticiones al servidor y mostrándo el menú para poder armar un pedido y enviarlo a WhatsApp.",
-    "img": "public/app/img/proyectos/screen-web-clubdelahamburguesa.png",
-    "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "GIT"],
-    "site": "#",
-    "repository": "https://github.com/Mother-s-Milk/reservaPrivada"
-  },
-  {
-    "type": "fullstack",
-    "tittle": "Sistema web \"Reserva Privada\"",
-    "description": "Un sistema para la gestión de una licorería que permite manejar inventario, ventas y proveedores. Además, cuenta con un modulo dedicado a la gestión de las mesas y reservas.",
-    "img": "public/app/img/proyectos/proyecto.png",
-    "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "GIT"],
-    "site": "#",
-    "repository": "https://github.com/Mother-s-Milk/reservaPrivada"
-  },
-  {
-    "type": "front",
-    "tittle": "\"Pizza Fusión\": site Web con carrito de compras",
-    "description": "Un site web interactivo para una pizzería. Ofrece a los usuarios la posibilidad de explorar el menú completo, armar su carro de compras mediante LocalStorage y enviar el pedido con los detalles a WhatsApp.",
-    "img": "public/app/img/proyectos/screen-web-pizzafusion.png",
-    "technologies": ["HTML", "CSS", "JavaScript", "PHP", "GIT"],
-    "site": "#",
-    "repository": "https://github.com/Mother-s-Milk/pizzaFusion"
-  }
-]
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Sistema \"Club de la Hamburguesa\"",
+            "description": "Software para el control de una hamburguesería estilo CRUD que cuenta, entre otras cosas, con sistema de login y un TPV que usa los productos cargados en la base de datos para realizar ventas.",
+            "img": "public/app/img/proyectos/screen-app-clubdelahamburguesa.png",
+            "technologies": ["HTML", "CSS", "JS", "PHP", "MySQL", "GIT"],
+            "site": "https://clubdelahamburguesa.io/public/authentication",
+            "repository": "https://github.com/Mother-s-Milk/reservaPrivada",
+            "roles": ["front", "back"],
+            "type": "application",
+            "date": "",
+            "status": "published",
+            "features": ["login", "point of sale"],
+            "team": true,
+            "demo_video": ""
+        },
+        {
+            "id": 2,
+            "title": "Web \"Club de la Hamburguesa\"",
+            "description": "Esta página está enlazada con el sistema del mismo nombre. Carga los productos dinamicamente haciendo peticiones al servidor y mostrando el menú para poder armar un pedido y enviarlo a WhatsApp.",
+            "img": "public/app/img/proyectos/screen-web-clubdelahamburguesa.png",
+            "technologies": ["HTML", "CSS", "JS", "PHP", "MySQL", "GIT"],
+            "site": "https://clubdelahamburguesa.io/",
+            "repository": "https://github.com/Mother-s-Milk/reservaPrivada",
+            "roles": ["front", "back"],
+            "type": "website",
+            "date": "",
+            "status": "published",
+            "features": ["shopping cart"],
+            "team": true,
+            "demo_video": ""
+        },
+        {
+            "id": 3,
+            "title": "Sistema \"Reserva Privada\"",
+            "description": "Un sistema para la gestión de una licorería que permite manejar inventario, ventas y proveedores. Además, cuenta con un módulo dedicado a la gestión de las mesas y reservas.",
+            "img": "public/app/img/proyectos/screen-app-reservaprivada.png",
+            "technologies": ["HTML", "CSS", "JS", "PHP", "MySQL", "GIT"],
+            "site": "#",
+            "repository": "https://github.com/Mother-s-Milk/reservaPrivada",
+            "roles": ["front", "back"],
+            "type": "application",
+            "date": "",
+            "status": "archived",
+            "features": ["login", "point of sale"],
+            "team": false,
+            "demo_video": ""
+        },
+        {
+            "id": 4,
+            "title": "Web \"Pizza Fusión\"",
+            "description": "Un sitio web interactivo para una pizzería. Ofrece a los usuarios la posibilidad de explorar el menú completo, armar su carrito de compras mediante LocalStorage y enviar el pedido con los detalles a WhatsApp.",
+            "img": "public/app/img/proyectos/screen-web-pizzafusion.png",
+            "technologies": ["HTML", "CSS", "JS", "GIT"],
+            "site": "#",
+            "repository": "https://github.com/Mother-s-Milk/pizzaFusion",
+            "roles": ["front", "back"],
+            "type": "website",
+            "date": "",
+            "status": "archived",
+            "features": ["shopping cart"],
+            "team": false,
+            "demo_video": ""
+        }
+    ]
+}

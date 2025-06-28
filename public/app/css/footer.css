@@ -1,0 +1,125 @@
+/********/
+/*FOOTER*/
+/********/
+.footer-content {
+	display: flex;
+	align-items: start;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 75px;
+	padding: 50px 100px;
+	transition: padding .1s ease;
+}
+
+.info-personal h2 {
+	margin-bottom: 5px;
+}
+
+.info-personal p {
+	font-size: 1rem;
+	font-weight: 500;
+	color: #aeb8d0;
+	text-align: center;
+}
+
+.info-personal h2,
+.footer-navegacion h2,
+.footer-redes-contacto h2 {
+	text-align: center;
+	font-size: 25px;
+	font-weight: 700;
+	color: #d0d8ff;
+}
+
+.footer-navegacion h2,
+.footer-redes-contacto h2 {
+	margin-bottom: 15px;
+}
+
+.footer-navegacion ul {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	align-items: center;
+}
+
+.footer-navegacion a {
+	display: block;
+	font-size: 16px;
+	padding: 5px 0;
+	color: #aeb8d0;
+	font-weight: 500;
+	transition: color .3s ease;
+}
+
+.footer-navegacion a:hover {
+	color: #ffffff;
+}
+
+.redes-links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+}
+
+.redes-links a {
+	font-size: 18px;
+	font-weight: 500;
+	background-color: transparent;
+	border: 1px solid #4b5f9b;
+	color: #d0d8ff;
+	border-radius: 10px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+	transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.redes-links a:hover {
+	background-color: #4b5f9b;
+    color: #ffffff;
+    box-shadow: 0 0 8px rgba(75, 95, 155, 0.35);
+}
+
+@media screen and (max-width: 886px) {
+	.footer-content {
+		padding: 50px 75px;
+	}
+}
+
+@media screen and (max-width: 836px) {
+	.footer-content {
+		padding: 50px 50px;
+	}
+}
+
+@media screen and (max-width: 786px) {
+	.footer-content {
+		padding: 30px;
+	}
+}
+
+@media screen and (max-width: 746px) {
+	.footer-content > div {
+		margin-inline: auto;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.footer-content {
+		gap: 50px;
+	}
+
+	.footer-content > div {
+		flex: 1 1 100%;
+	}
+
+	.item-1 { order: 1; }
+	.item-2 { order: 2; }
+	.item-3 { order: 3; }
+}
