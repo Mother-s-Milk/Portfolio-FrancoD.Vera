@@ -1,6 +1,6 @@
-/*        */
-/*PROJECTS*/
-/*        */
+/************/
+/* PROJECTS */
+/************/
 .projects {
 }
 
@@ -8,46 +8,44 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
+	gap: 15px;
 	margin-bottom: 50px;
 }
 
-.filters-content {
-	background-color: rgba(255, 255, 255, 0.03);
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	padding: 5px;
-	border-radius: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 15px;
-}
-
 .filter-button {
-	padding: 10px 20px;
-	border-radius: 50px;
+	font-family: 'Inter', sans-serif;
 	font-size: 1rem;
-	font-weight: 700;
-	border: none;
+	font-weight: 600;
+
 	background-color: transparent;
-	color: #dce6ff;
+	color: #bfa9ba;
+	border: 1px solid #7c83ad;
+	border-radius: 50px;
+	
+	padding: 10px 20px;
+	transition: all 0.3s ease;
 }
 
 .filter-button:hover {
-	border-color: rgba(173, 216, 230, 0.25);
-	box-shadow: 0px 0px 5px rgba(173, 216, 230, 0.15);
-	background-color: rgba(255, 255, 255, 0.08);
+	background-color: rgba(255, 255, 255, 0.05);
+	border-color: #bfa9ba;
+	color: #ffffff;
 }
 
 .filter-button.active {
-	border-color: rgba(173, 216, 230, 0.25);
-	box-shadow: 0px 0px 5px rgba(173, 216, 230, 0.15);
-	background-color: rgba(255, 255, 255, 0.08);
+	background-color: #ff9368;
+	border-color: #e97450;
+	color: #0e0d15;
 }
 
+/******************/
+/* CARDS PROJECTS */
+/******************/
 .projects-cards {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1.875rem;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 1.875rem; /*30*/
 	align-items: start;
 }
 
@@ -55,11 +53,14 @@
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
-	border-radius: 30px;
-	padding: 20px;
+	
 	background-color: rgba(255, 255, 255, 0.03);
 	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 30px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+	padding: 20px;
+
 	transition: border-color .3s ease, box-shadow .3s ease;
 }
 
@@ -68,31 +69,33 @@
 	box-shadow: 0 5px 10px rgba(173, 216, 230, 0.15);
 }
 
-.project-card-img {
+.project-img {
 	border-radius: 15px;
 	width: 100%;
-	/*height: 175px;*/
   	display: block;
 }
 
-.project-card-content {
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
+.project-info {
+	margin-bottom: 15px;
 }
 
-.project-card-content h1 {
-	font-size: 24px;
+.project-info h2 {
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
+	font-size: 21px;
 	font-weight: 600;
-	margin-bottom: 15px;
+	
 	color: #e0e6ff;
 	text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+
+	margin-bottom: 10px;
 }
 
-.project-card p {
+.project-info p {
+	font-family: 'Inter', Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+
 	color: #b0b8d1;
-	font-size: 18px;
-	font-weight: 500;
 	margin-bottom: 20px;
 
 	line-height: 1.5em;
@@ -104,33 +107,30 @@
 	text-overflow: ellipsis;
 }
 
-.project-card-technologies {
+.project-technologies {
 	display: flex;
 	justify-content: start;
 	gap: 10px;
-	display: flex;
-    align-items: start;
 	flex-wrap: wrap;
-    /*overflow-x: auto;
-    scroll-snap-type: x mandatory;*/
 }
 
-.project-card-technologies::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
-}
+.project-technologies span {
+	font-family: 'Inter', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 500;
 
-.project-card-technologies span {
 	display: inline-block;
-	padding: 5px 7.5px;
+	
 	border-radius: 15px;
 	color: #fbfbfb;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, .75);
-	font-size: 15px;
-	font-weight: 700;
+
+	padding: 5px 7.5px;
+	
 	/*flex: 0 0 auto;*/
 }
 
-.project-card-technologies span i {
+.project-technologies span i {
 	margin-right: 5px;
 }
 
@@ -169,26 +169,29 @@
 	border: 1px solid #ff744c;
 }
 
-.project-card-links {
+.project-links {
 	display: flex;
 	justify-content: end;
 	gap: 10px;
 }
 
-.project-card-links a {
+.project-links a {
+	font-size: 16px;
+
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column;
-	padding: 10px;
+	
 	border-radius: 10px;
-	font-size: 20px;
-	width: 45px;
-	height: 45px;
+	
+	width: 40px;
+	height: 40px;
+
 	transition: background-color 0.3s ease, border 0.3s ease;
 }
 
-.project-card-links a:focus {
+.project-links a:focus {
 	outline: 2px solid #fbfbfb;
 	outline-offset: 2px;
 }
@@ -206,7 +209,7 @@
 }
 
 .btn-site {
-	background-color: transparent; /* tu azul claro */
+	background-color: transparent;
 	color: #aeb8d0;
     border: 1px solid #313c5c;
 }
@@ -219,7 +222,7 @@
 }
 
 /*1038px*/
-@media screen and (max-width: 1087px) {
+/*@media screen and (max-width: 1087px) {
 	.project-card-content h1 {
 		font-size: 22px;
 	}
@@ -240,4 +243,25 @@
 		width: 40px;
 		height: 40px;
 	}
-}
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

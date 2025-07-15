@@ -9,10 +9,25 @@
 	--blue-medium: #2A4D65;
 	--blue-light: #5d7098;
 	--accent-green: #A6FF4D;
+
+	/* ACTUALLY PALETTE */
+	--one: #0e0d15;
+	--two: #182346;
+	--three: #3d5387;
+	--four: #7c83ad;
+	--five: #bfa9ba;
 }
 
 html {
 	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #0e0d15;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; /* Mejora en Firefox */
+  	text-rendering: optimizeLegibility;
 }
 
 /***********/
@@ -39,29 +54,9 @@ html {
     display: none; /*Esto oculta las flechas de arriba y abajo*/
 }
 
-body {
-	font-family: 'Quicksand', sans-serif;
-	background: linear-gradient(to bottom, #0f0f0f, #141824, #263849);
-	overflow-x: hidden;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale; /* Mejora en Firefox */
-  	text-rendering: optimizeLegibility;
-}
-
-
-
-/**/
-.body-content {
-	display: grid;
-	grid-template-rows: auto 1fr auto;
-	min-height: 100dvh;
-}
-
-
-
-/*******************/
-/*Estilos Generales*/
-/*******************/
+/*********************/
+/* Estilos generales */
+/*********************/
 ul {
     list-style-type: none;
 }
@@ -72,88 +67,92 @@ a {
 
 button {
     cursor: pointer;
-    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
-
-
-/********************************************************/
-/*Estilos para controlar el crecimiento de las secciones*/
-/********************************************************/
-.section {
-    padding: 100px;
-}
-
-@media screen and (max-width: 1255px) {
-	.section {
-		padding: 100px 75px;
-	}
-}
-
-@media screen and (max-width: 1205px) {
-	.section {
-		padding: 100px 50px;
-	}
-}
-
-@media screen and (max-width: 1155px) {
-	.section {
-		padding: 75px 30px;
-	}
-}
-
-@media screen and (max-width: 1003px) {
-	.section {
-		padding: 100px 75px;
-	}
-}
-
-@media screen and (max-width: 977px) {
-	.section {
-		padding: 100px 50px;
-	}
-}
-
-@media screen and (max-width: 927px) {
-	.section {
-		padding: 75px 30px;
-	}
-}
-
-
-
-/* */
+/*************/
+/* CONTAINER */
+/*************/
 .container {
     max-width: 1440px;
     margin: 0 auto;
 }
 
-
-
-/**********/
-/*SECTIONS*/
-/**********/
-.header-section {
-	margin-bottom: 30px;
-	text-align: center;
+/**********************************************************/
+/* Estilos para controlar el crecimiento de las secciones */
+/**********************************************************/
+.section {
+    padding: 60px 20px;
 }
 
-.title-section {
+/*@media screen and (max-width: 1235px) {
+	.section {
+		padding: 100px 80px;
+	}
+}
+
+@media screen and (max-width: 1195px) {
+	.section {
+		padding: 100px 60px;
+	}
+}
+
+@media screen and (max-width: 1155px) {
+	.section {
+		padding: 100px 40px;
+	}
+}
+
+@media screen and (max-width: 1115px) {
+	.section {
+		padding: 100px 20px;
+	}
+}
+
+@media screen and (max-width: 1075px) {
+	.section {
+		padding: 100px;
+	}
+}*/
+
+/*@media screen and (max-width: 997px) {
+	.section {
+		padding: 100px 50px;
+	}
+}*/
+
+/*@media screen and (max-width: 947px) {
+	.section {
+		padding: 75px 30px;
+	}
+}*/
+
+/************/
+/* SECTIONS */
+/************/
+.section-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.section-title {
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
+	font-size: 30px;
 	font-weight: 700;
+	
+	color: #F5F5F7;
+	
 	margin-bottom: 15px;
 	text-transform: uppercase;
-	color: #e0e6ff;
-	font-size: 30px;
 }
 
-.description-section {
-	font-weight: 600;
-	color: #b0b8d1;
-	font-size: 21px;
-	text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+.section-description {
+	font-family: 'Inter', Arial, Helvetica, sans-serif;
+	font-size: 1.125rem; /*18*/
+	font-weight: 400;
+	color: #A8A8B3;
+  	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-
-
 
 /***********/
 /* DIVIDER */
@@ -161,28 +160,27 @@ button {
 .divider-container {
 	max-width: 1440px;
     margin: 0 auto;
-	padding: 0 9.375rem;
+	padding: 0 1.25rem; /*20*/
 }
 
 .divider {
     border: none;
     border-radius: 0.9375rem;
     height: 1px;
-	background: linear-gradient(to right,
+	background: linear-gradient(
+		to right,
         transparent,
-        rgba(75, 95, 155, 0.2),
-        rgba(75, 95, 155, 0.25),
-        rgba(75, 95, 155, 0.2),
+        rgba(124, 131, 173, 0.2),
+    	rgba(124, 131, 173, 0.25),
+    	rgba(124, 131, 173, 0.2),
         transparent);
     width: 100%;
 }
 
-
-
 /*************************/
 /* Estilos para el modal */
 /*************************/
-.modal {
+/*.modal {
   	display: none;
   	position: absolute;
   	z-index: 999;
@@ -197,7 +195,7 @@ button {
 
 .modal-content {
   	text-align: center;
-}
+}*/
 
 
 

@@ -4,7 +4,6 @@ const controller = {
     getProjects: () => {
         service.getProjects()
             .then(response => {
-                console.log('Proyectos cargados: ', response);
                 controller.renderProjects(response)
             })
             .catch(error => console.log('Error al cargar los proyectos: ', error))
@@ -59,23 +58,21 @@ const controller = {
 
             let newCard = `
                 <article class="project-card" data-type="${element.type}">
-                    <img class="project-card-img" src="${element.img}" alt="${element.title}">
-                    <div class="project-card-content">
-                        <div>
-                            <h1>${element.title}</h1>
-                            <p>${element.description}</p>
-                            <div class="project-card-technologies">
-                                ${technologies}
-                            </div>
+                    <img class="project-img" src="${element.img}" alt="${element.title}">
+                    <div class="project-info">
+                        <h2>${element.title}</h2>
+                        <p>${element.description}</p>
+                        <div class="project-technologies">
+                            ${technologies}
                         </div>
-                        <div class="project-card-links">
-                            <a class="btn-site" href="${element.site}" title="Ver sitio web" rel="noopener noreferrer">
-                                <i class="fa-solid fa-link"></i>
-                            </a>
-                            <a class="btn-github" href="${element.repository}" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-github-alt"></i>
-                            </a>
-                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a class="btn-site" href="${element.site}" title="Ver sitio web" rel="noopener noreferrer">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                        <a class="btn-github" href="${element.repository}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github-alt"></i>
+                        </a>
                     </div>
                 </article>
             `;
@@ -87,7 +84,7 @@ const controller = {
 
 document.addEventListener('DOMContentLoaded', () => {
     function adjustHeroHeight() {
-        const principalHeader = document.querySelector('.principal-header');
+        const principalHeader = document.querySelector('.main-header');
         const hero = document.querySelector('.hero');
         if (principalHeader && hero) {
             const navHeight = principalHeader.offsetHeight;
@@ -98,11 +95,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ejecutar al cargar y al cambiar tamaño
     window.addEventListener('load', adjustHeroHeight);
     window.addEventListener('resize', adjustHeroHeight);
+    
+    /******************/
+    /* FULLSCREEN NAV */
+    /******************/
+    const toggleButton = document.getElementById("btn-menu");
+    const nav = document.getElementById("mobile-menu");
 
-    /*                                */
+    toggleButton.addEventListener("click", () => {
+        const isActive = nav.classList.contains("active");
+
+	    toggleButton.setAttribute("aria-expanded", String(!isActive));
+
+        if (isActive) {
+            nav.classList.add("closing");
+            setTimeout(() => {
+                nav.classList.remove("active", "closing");
+            }, 300);
+        } else {
+            nav.classList.add("active");
+        }
+    });
+
+    /**********************************/
     /* Animation for the hero buttons */
-    /*                                */
-    gsap.from(".buttons-hero a", {
+    /**********************************/
+    gsap.from(".hero-buttons a", {
         y: 75,
         opacity: 0,
         duration: 1,
@@ -114,30 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    /* */
+    /****************/
+    /* GET PROYECTS */
+    /****************/
     controller.getProjects();
-    /* */
-
-    /*     */
-    /* NAV */
-    /*     */
-    const navbar = document.querySelector(".menu-desplegable");
-    const toggleButton = document.getElementById("btn-menu");
-    const links = document.querySelectorAll(".mobile-nav-link");
-
-    toggleButton.addEventListener("click", () => {
-        const isOpen = navbar.classList.toggle("show-menu");
-        document.body.style.overflow = isOpen ? "hidden" : "auto";
-        toggleButton.setAttribute("aria-expanded", isOpen);
-    });
-
-    links.forEach(link => {
-        link.addEventListener("click", () => {
-            navbar.classList.remove("show-menu");
-            document.body.style.overflow = "auto";
-            toggleButton.setAttribute("aria-expanded", false);
-        });
-    });
-
 
 });
