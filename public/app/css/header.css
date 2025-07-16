@@ -2,7 +2,7 @@
 /* HEADER */
 /**********/
 .main-header {
-	padding: 20px;
+	padding: 1.25rem; /*20*/
 }
 
 /***************/
@@ -18,11 +18,11 @@
 .btn-menu {
 	position: relative;
 
-	font-size: 24px;
-	font-weight: 700;
+	font-size: 1.5rem; /*24*/
 	
 	background-color: transparent;
-	color: rgba(255, 255, 255, 0.85);
+	color: var(--color-thistle);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 	
 	border: none;
 	border-radius: 5px;
@@ -30,10 +30,13 @@
 	padding: 5px 7.5px;
 	
 	z-index: 9998;
+
+    transition: color 0.3s ease;
 }
 
-.btn-menu:hover {
-	color: #ffffff;
+.btn-menu:hover,
+.btn-menu:focus {
+	color: var(--color-periwinkle);
 }
 
 .mobile-menu {
@@ -50,9 +53,7 @@
 
     overflow: hidden;
 
-    background: rgba(14, 13, 21, .8);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background-color: var(--color-indigo);
 
     z-index: 9997;
 	transition: height 0.5s ease;
@@ -63,14 +64,12 @@
 }
 
 .mobile-nav-list {
-    padding: 0;
-    margin: 0;
-
     text-align: center;
 
     opacity: 0;
 
     transform: translateY(30px);
+
     transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
 }
 
@@ -87,18 +86,20 @@
 }
 
 .mobile-nav-list li {
-    margin: 1rem 0;
+    margin: 1.5rem 0; /*24*/
 }
 
 .mobile-nav-link {
 	font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 1.5rem; /*24*/
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-thistle);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 
     transition: color 0.3s ease;
 }
 
-.mobile-nav-link:hover {
-    color: #ffffff;
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
+    color: var(--color-periwinkle);
 }

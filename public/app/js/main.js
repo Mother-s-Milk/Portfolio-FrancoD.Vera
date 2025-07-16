@@ -67,7 +67,7 @@ const controller = {
                         </div>
                     </div>
                     <div class="project-links">
-                        <a class="btn-site" href="${element.site}" title="Ver sitio web" rel="noopener noreferrer">
+                        <a class="btn-site" href="${element.site}" title="Ver sitio web de ${element.title}" target="_blank" rel="noopener noreferrer">
                             <i class="fa-solid fa-link"></i>
                         </a>
                         <a class="btn-github" href="${element.repository}" target="_blank" rel="noopener noreferrer">
@@ -83,43 +83,57 @@ const controller = {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    /******************/
+    /* FULLSCREEN NAV */
+    /******************/
+    const btnMenu = document.getElementById("btn-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navLinks = mobileMenu.querySelectorAll(".mobile-nav-link");
+
+    btnMenu.addEventListener("click", () => {
+        const isActive = mobileMenu.classList.contains("active");
+
+	    btnMenu.setAttribute("aria-expanded", String(!isActive));
+
+        if (isActive) {
+            mobileMenu.classList.add("closing");
+            setTimeout(() => {
+                mobileMenu.classList.remove("active", "closing");
+            }, 300);
+        } else {
+            mobileMenu.classList.add("active");
+        }
+    });
+
+    // CLOSE THE MENU CLICKING ANY LINK
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("closing");
+            btnMenu.setAttribute("aria-expanded", "false");
+            setTimeout(() => {
+                mobileMenu.classList.remove("active", "closing");
+            }, 300);
+        });
+    });
+
+    /***********************************************/
+    /* ADJUSTS THE HERO SECTION HEIGHT DYNAMICALLY */
+    /***********************************************/
     function adjustHeroHeight() {
-        const principalHeader = document.querySelector('.main-header');
+        const mainHeader = document.querySelector('.main-header');
         const hero = document.querySelector('.hero');
-        if (principalHeader && hero) {
-            const navHeight = principalHeader.offsetHeight;
+        if (mainHeader && hero) {
+            const navHeight = mainHeader.offsetHeight;
             hero.style.minHeight = `calc(100vh - ${navHeight}px)`;
         }
     }
     
-    // Ejecutar al cargar y al cambiar tamaño
     window.addEventListener('load', adjustHeroHeight);
     window.addEventListener('resize', adjustHeroHeight);
-    
-    /******************/
-    /* FULLSCREEN NAV */
-    /******************/
-    const toggleButton = document.getElementById("btn-menu");
-    const nav = document.getElementById("mobile-menu");
 
-    toggleButton.addEventListener("click", () => {
-        const isActive = nav.classList.contains("active");
-
-	    toggleButton.setAttribute("aria-expanded", String(!isActive));
-
-        if (isActive) {
-            nav.classList.add("closing");
-            setTimeout(() => {
-                nav.classList.remove("active", "closing");
-            }, 300);
-        } else {
-            nav.classList.add("active");
-        }
-    });
-
-    /**********************************/
-    /* Animation for the hero buttons */
-    /**********************************/
+    /***************************************/
+    /* ENTRANCE ANIMATION FOR HERO BUTTONS */
+    /***************************************/
     gsap.from(".hero-buttons a", {
         y: 75,
         opacity: 0,
@@ -133,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /****************/
-    /* GET PROYECTS */
+    /* GET PROJECTS */
     /****************/
     controller.getProjects();
 
