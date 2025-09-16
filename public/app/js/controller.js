@@ -1,6 +1,6 @@
 import { service } from "./service.js";
 
-const controller = {
+export const controller = {
     getProjects: () => {
         service.getProjects()
             .then(response => {
@@ -81,74 +81,3 @@ const controller = {
         });
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    /******************/
-    /* FULLSCREEN NAV */
-    /******************/
-    const btnMenu = document.getElementById("btn-menu");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navLinks = mobileMenu.querySelectorAll(".mobile-nav-link");
-
-    btnMenu.addEventListener("click", () => {
-        const isActive = mobileMenu.classList.contains("active");
-
-	    btnMenu.setAttribute("aria-expanded", String(!isActive));
-
-        if (isActive) {
-            mobileMenu.classList.add("closing");
-            setTimeout(() => {
-                mobileMenu.classList.remove("active", "closing");
-            }, 300);
-        } else {
-            mobileMenu.classList.add("active");
-        }
-    });
-
-    // CLOSE THE MENU CLICKING ANY LINK
-    navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            mobileMenu.classList.add("closing");
-            btnMenu.setAttribute("aria-expanded", "false");
-            setTimeout(() => {
-                mobileMenu.classList.remove("active", "closing");
-            }, 300);
-        });
-    });
-
-    /***********************************************/
-    /* ADJUSTS THE HERO SECTION HEIGHT DYNAMICALLY */
-    /***********************************************/
-    function adjustHeroHeight() {
-        const mainHeader = document.querySelector('.main-header');
-        const hero = document.querySelector('.hero');
-        if (mainHeader && hero) {
-            const navHeight = mainHeader.offsetHeight;
-            hero.style.minHeight = `calc(100vh - ${navHeight}px)`;
-        }
-    }
-    
-    window.addEventListener('load', adjustHeroHeight);
-    window.addEventListener('resize', adjustHeroHeight);
-
-    /***************************************/
-    /* ENTRANCE ANIMATION FOR HERO BUTTONS */
-    /***************************************/
-    gsap.from(".hero-buttons a", {
-        y: 75,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.3,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: ".hero",
-            start: "top center",
-        }
-    });
-
-    /****************/
-    /* GET PROJECTS */
-    /****************/
-    controller.getProjects();
-
-});
