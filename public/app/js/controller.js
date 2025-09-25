@@ -56,23 +56,32 @@ export const controller = {
                 `;
             });
 
+            let repoLink = "";
+            if (element.repository && element.repository !== "private") {
+            repoLink = `
+                <a class="btn-github" href="${element.repository}" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github-alt"></i>
+                </a>
+            `;
+            }
+
             let newCard = `
                 <article class="project-card" data-type="${element.type}">
                     <img class="project-img" src="${element.img}" alt="${element.title}">
-                    <div class="project-info">
-                        <h2>${element.title}</h2>
-                        <p>${element.description}</p>
-                        <div class="project-technologies">
-                            ${technologies}
+                    <div class="project-card-content">
+                        <div class="project-info">
+                            <h2>${element.title}</h2>
+                            <p>${element.description}</p>
+                            <div class="project-technologies">
+                                ${technologies}
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-links">
-                        <a class="btn-site" href="${element.site}" title="Ver sitio web de ${element.title}" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-link"></i>
-                        </a>
-                        <a class="btn-github" href="${element.repository}" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-github-alt"></i>
-                        </a>
+                        <div class="project-links">
+                            <a class="btn-site" href="${element.site}" title="Ver sitio web de ${element.title}" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                            ${repoLink}
+                        </div>
                     </div>
                 </article>
             `;

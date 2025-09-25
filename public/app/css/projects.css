@@ -41,20 +41,20 @@
 /******************/
 .projects-cards {
 	display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	align-items: start;
-	gap: 1.875rem; /*30*/
+	grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+	gap: 1.25rem;
+	justify-content: center;
 }
 
 .project-card {
+	max-width: 500px;
+
 	background-color: #151a25;
 	border: 1px solid rgba(255, 255, 255, 0.08);
-	border-radius: 1.875rem; /*30*/
+	border-radius: 1.25rem;
 	box-shadow:
   		0 4px 6px rgba(0, 0, 0, 0.35),
   		0 0 4px rgba(255, 255, 255, 0.05);
-
-	padding: 1.25rem; /*20*/
 
 	transition: border-color .3s ease, box-shadow .3s ease;
 }
@@ -67,15 +67,17 @@
 }
 
 .project-img {
-	border-radius: 0.9375rem; /*15*/
+	border-radius: 1.25rem 1.25rem 0 0;
 	width: 100%;
   	display: block;
+}
 
-	margin-bottom: 0.9375rem; /*15*/
+.project-card-content {
+	padding: 1.25rem;
 }
 
 .project-info {
-	margin-bottom: 0.9375rem; /*15*/
+	margin-bottom: 0.625rem;
 }
 
 .project-info h2 {
@@ -86,25 +88,25 @@
 	color: #e6e6e6;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 
-	margin-bottom: 0.625rem; /*10*/
+	margin-bottom: 0.625rem;
 }
 
 .project-info p {
 	font-family: 'Inter', Arial, Helvetica, sans-serif;
-	font-size: 0.9375rem; /*15*/
+	font-size: 1rem;
 	font-weight: 400;
 
 	color: #bfa9ba;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-	margin-bottom: 1.25rem; /*20*/
+	margin-bottom: 1.25rem;
 
-	line-height: 1.5em;
+	/*line-height: 1.5em;
 	max-height: calc(1.5em * 3);
 	overflow: hidden;
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
-	text-overflow: ellipsis;
+	text-overflow: ellipsis;*/
 }
  /* TAGS STYLES */
 .project-technologies {
@@ -179,7 +181,7 @@
 }
 
 .project-links a {
-	font-size: 1rem; /*16*/
+	font-size: 1rem;
 
 	display: flex;
 	flex-direction: column;
