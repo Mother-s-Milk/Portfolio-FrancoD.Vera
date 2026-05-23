@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+/* PALETA */
+/*
+https://coolors.co/0d0d0d-2b1b0e-c97d2e-8b1a1a-94a0a0
+*/
+
+:root {
+	scroll-padding-top: 70px;
+	scroll-behavior: smooth;
+
+	/* ── Backgrounds ── */
+	--color-bg-body: #0D0D0D;
+	--color-bg-surface: #130F09;
+	--color-bg-card: #2B1B0E;
+
+	/* ── Borders ── */
+	--color-border: #3D2510;
+
+	/* ── Text ── */
+	--color-text-primary: #F0E6D3;
+	--color-text-secondary: #C4B49A;
+	--color-text-muted: #7A6A56;
+
+	/* ── Accent ── */
+	--color-accent: #C97D2E;
+	--color-accent-light: #E8A55A;
+
+	/* ── Typography ── */
+	--font-body: 'Inter', sans-serif;
+	--font-heading: 'Playfair Display', serif;
+
+	/* ── Nav ── */
+	--color-bg-nav: var(--color-bg-surface);
+	--color-border-nav: var(--color-border);
+	--color-nav-link: var(--color-text-secondary);
+	--color-nav-link-hover: var(--color-text-primary);
+
+	/* ── Buttons ── */
+	--color-btn-primary-bg: var(--color-accent);
+	--color-btn-primary-bg-hover: var(--color-accent-light);
+	--color-btn-primary-text: var(--color-bg-body);
+
+	--color-btn-ghost-border: var(--color-accent);
+	--color-btn-ghost-text: var(--color-accent);
+	--color-btn-ghost-bg-hover: rgba(201, 125, 46, 0.10);
+	--color-btn-ghost-text-hover: var(--color-accent-light);
+
+	/* ── Logo ── */
+	--color-logo-text: var(--color-text-primary);
+	--color-logo-accent: var(--color-accent);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-body);
+
+	background-color: var(--color-bg-body);
+
+	overflow-x: hidden;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+/******************/
+/* GENERAL STYLES */
+/******************/
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	font-family: var(--font-body);
+
+	cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-heading);
+}
+
+/*************/
+/* CONTAINER */
+/*************/
+.container {
+	max-width: 1440px;
+
+	margin: 0 auto;
+}
+
+/*******************/
+/* SECTIONS STYLES */
+/*******************/
+.section {
+	padding: 5rem 3rem;
+}
+
+.section-highlight {
+	background: var(--color-bg-surface);
+}
+
+.section__header {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	margin-bottom: 3rem;
+}
+
+.section__header--center {
+	align-items: center;
+}
+
+.section__title {
+	font-size: 2.25rem;
+	font-weight: 700;
+	font-style: italic;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+
+	color: var(--color-text-primary);
+}
+
+.section__description {
+	font-size: 1rem;
+	letter-spacing: 0.04rem;
+	line-height: 1.7;
+
+	color: var(--color-text-secondary);
+}
+
+/***********/
+/* DIVIDER */
+/***********/
+.divider__container {
+	max-width: 1024px;
+
+	margin: 0 auto;
+}
+
+.divider {
+	width: 100%;
+	height: 1px;
+
+	border: none;
+	border-radius: 999px;
+
+	background: linear-gradient(to right,
+			transparent,
+			var(--color-accent-light),
+			var(--color-accent),
+			var(--color-accent-light),
+			transparent);
+}
+
+/* BUTTONS */
+.btn {}
+
+.btn--primary {
+	background: var(--color-btn-primary-bg);
+	color: var(--color-btn-primary-text);
+}
+
+.btn--primary:hover {
+	background: var(--color-btn-primary-bg-hover);
+}
+
+.btn--ghost {
+	border: 1px solid var(--color-btn-ghost-border);
+	color: var(--color-btn-ghost-text);
+}
+
+.btn--ghost:hover {
+	background: var(--color-btn-ghost-bg-hover);
+	color: var(--color-btn-ghost-text-hover);
+}
+
+/* HIGHLIGHT TEXT */
+.highlight-text {
+	color: var(--color-accent);
+}
+
+@media screen and (max-width: 1024px) {
+	.section {
+		padding: 5rem 2.5rem;
+	}
+
+	.section__title {
+		font-size: 2rem;
+	}
+
+	.section__description {
+		font-size: 0.9rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.section {
+		padding: 5rem 2rem;
+	}
+
+	.section__title {
+		font-size: 1.75rem;
+	}
+
+	.section__description {
+		font-size: 0.85rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.section {
+		padding: 5rem 1.5rem;
+	}
+
+	.section__title {
+		font-size: 1.5rem;
+	}
+
+	.section__description {
+		font-size: 0.8rem;
+	}
+}
