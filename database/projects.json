@@ -27,7 +27,7 @@
                 "projects/screen-app-clubdelahamburguesa.png",
                 "projects/screen-app-clubdelahamburguesa.png"
             ],
-            "img": "projects/screen-app-clubdelahamburguesa.png",
+            "img": "projects/clubDeLaHamburguesaApp.png",
             "site": "",
             "repository": "",
             "repository_is_public": false
@@ -47,7 +47,7 @@
                 "JS"
             ],
             "images": [],
-            "img": "projects/screen-app-clubdelahamburguesa.png",
+            "img": "projects/clubDeLaHamburguesaWeb.png",
             "site": "https://clubdelahamburguesaco.com/",
             "repository": "",
             "repository_is_public": false
@@ -91,7 +91,7 @@
                 "GIT"
             ],
             "images": [],
-            "img": "projects/screen-app-clubdelahamburguesa.png",
+            "img": "projects/pizzaFusionWeb.png",
             "site": "#",
             "repository": "https://github.com/Mother-s-Milk/pizzaFusion",
             "repository_is_public": true
@@ -174,7 +174,7 @@
                 "js"
             ],
             "images": [],
-            "img": "projects/screen-app-clubdelahamburguesa.png",
+            "img": "projects/portfolio.png",
             "site": "#",
             "repository": "https://github.com",
             "repository_is_public": true
