@@ -1,19 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    /*********/
-    /* ABOUT */
-    /*********/
-    const aboutButtons = document.querySelectorAll(".about-button");
-    const aboutIcons = document.querySelectorAll(".about-button-icon");
+    const items = document.querySelectorAll('.about-list > li');
 
-    aboutButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const listItem = button.closest("li");
-            const submenu = listItem.querySelector(".about-submenu");
-            const icon = button.querySelector(".about-button-icon");
+    function open(item) {
+        item.classList.add('active');
+        item.querySelector('.about-button').setAttribute('aria-expanded', 'true');
+    }
 
-            button.classList.toggle("active");
-            icon.classList.toggle("active");
-            submenu.classList.toggle("active");
+    function close(item) {
+        item.classList.remove('active');
+        item.querySelector('.about-button').setAttribute('aria-expanded', 'false');
+    }
+
+    items.forEach(item => {
+        const button = item.querySelector('.about-button');
+        button.setAttribute('aria-expanded', 'false');
+
+        button.addEventListener('click', () => {
+            const wasOpen = item.classList.contains('active'); // 1. ¿el que toqué ya estaba abierto?
+
+            items.forEach(close);                              // 2. cierro todos
+
+            if (!wasOpen) open(item);                          // 3. abro el mío (si estaba abierto, queda cerrado)
         });
     });
 });

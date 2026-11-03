@@ -1,70 +1,55 @@
 .about__inner {
-	max-width: 900px;
+    max-width: 1000px;
 
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
 
-	margin: auto;
+    margin: auto;
+}
+
+/**************/
+/* ABOUT LEFT */
+/**************/
+.about-image-container {
+    position: relative;
+}
+
+.about-image-container::before {
+    content: '';
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+
+    border: 1px solid var(--color-border);
+    border-radius: 0.625rem;
+
+    z-index: -1;
+}
+
+.about-image-container img {
+    display: block;
+
+    width: 100%;
+    max-width: 300px;
+
+    border-radius: 0.625rem;
 }
 
 /***************/
 /* ABOUT RIGHT */
 /***************/
-.about-image-container {
-	position: relative;
-}
-
-.about-image-container::before {
-	content: '';
-
-	position: absolute;
-	top: 20px;
-	left: 20px;
-
-	width: 100%;
-	max-width: 300px;
-	height: 100%;
-
-	border: 1px solid var(--color-border);
-	border-radius: 0.625rem;
-
-	z-index: -1;
-}
-
-.about-image-container img {
-	display: block;
-
-	width: 100%;
-	max-width: 300px;
-
-	border-radius: 0.625rem;
-}
-
-/*************/
-/* ABOUT BIO */
-/*************/
-.about-heading {
-	margin-bottom: 1.5rem;
-}
-
-.about-heading-title {
-	font-size: 2rem;
-	font-weight: 700;
-}
-
 .about-bio {
-	display: flex;
-	flex-direction: column;
-	gap: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 
-	margin-bottom: 1.5rem;
-}
-
-.about-bio-text {
-	font-size: 1rem;
-	line-height: 1.4;
-	text-align: justify;
+    margin-bottom: 2.5rem;
 }
 
 /*******************************/
@@ -87,70 +72,88 @@
 }
 
 .about-button {
-	font-size: 0.9rem;
+    font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
-	letter-spacing: 0.04rem;
+    letter-spacing: 0.04rem;
 
-	width: 100%;
+    width: 100%;
 
     display: flex;
-	justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
 
     background: var(--color-btn-primary-bg);
-	color: var(--color-btn-primary-text);
-	border: none;
-    
+    color: var(--color-btn-primary-text);
+    border: none;
     padding: 0.3125rem;
 
     transition: background .3s ease, color .3s ease;
 }
 
 .about-button:hover,
-.about-button.active {
+.about-list > li.active .about-button {
     background: var(--color-btn-primary-bg-hover);
 }
 
 .about-button-icon {
-	transition: transform .2s ease;
+    transition: transform .2s ease;
 }
 
-.about-button-icon.active {
-	transform: rotate(90deg);
+.about-list > li.active .about-button-icon {
+    transform: rotate(90deg);
 }
 
 .about-submenu {
-   	max-height: 0;
-	visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
 
     background: var(--color-bg-surface);
-    transition: max-height 0.3s ease, visibility 0.1s ease;
+
+    /* al cerrar: el visibility espera a que termine la animación */
+    transition: max-height 0.3s ease, visibility 0s linear 0.3s;
 }
 
-.about-submenu.active {
+.about-list > li.active .about-submenu {
     max-height: 500px;
+    visibility: visible;
 
-	visibility: visible;
+    /* al abrir: visible de inmediato */
+    transition: max-height 0.3s ease, visibility 0s;
 }
 
 .about-submenu li {
-	font-size: 0.9rem;
+    font-size: 0.9rem;
 
-	display: flex;
-	align-items: center;
-	gap: 0.625rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
 
-	color: var(--color-text-primary);
-	border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    border-bottom: 1px solid var(--color-border);
 
-	padding: 1rem 0.625rem;
+    padding: 1rem 0.625rem;
 }
 
 .about-submenu li:last-child {
-    border-bottom: 0px;
+    border-bottom: 0;
 }
 
 .about-submenu li i {
-	color: var(--color-text-muted);
+    color: var(--color-text-muted);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .about__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .about-left {
+        display: flex;
+        justify-content: center;
+
+        margin-bottom: 1rem;
+    }
 }
