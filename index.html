@@ -4,121 +4,124 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#111111">
 
-	<!-- TITLE -->
-	<title>Franco Vera | Full-Stack Dev</title>
-
-	<!-- SEO -->
+	<title>Franco Vera | Desarrollador web full-stack</title>
 	<meta name="description" content="Portfolio de Franco Vera - Analista de Sistemas y desarrollador web full-stack.">
-	<meta name="keywords" content="portfolio, desarrollador web, Franco Vera, software, developer">
-	<meta name="author" content="Franco Daniel Vera - Full-Stack Developer">
-	<meta name="robots" content="index, follow">
-	<!-- <meta name="theme-color" content="#0e0d15">
-	<meta name="color-scheme" content="dark light"> -->
-
-	<!-- CANONICAL -->
+	<meta name="author" content="Franco Daniel Vera">
 	<link rel="canonical" href="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
 
 	<!-- OPEN GRAPH -->
-	<meta property="og:title" content="Portfolio de Franco Vera - Analista de Sistemas y desarrollador web full-stack.">
-	<meta property="og:description"
-		content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explorá mis proyectos y tecnologías.">
-	<meta property="og:image"
-		content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/assets/img/branding/logo.png">
-	<meta property="og:url" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
 	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Franco Vera">
+	<meta property="og:title" content="Portfolio de Franco Vera - Desarrollador web full-stack.">
+	<meta property="og:description" content="Sitios web modernos y optimizados para negocios. Explorá mis proyectos.">
+	<meta property="og:url" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
+	<meta property="og:image" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/assets/img/branding/logo.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="Franco Vera, desarrollador web full-stack">
 	<meta property="og:locale" content="es_AR">
-
-	<!-- TWITTER -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title"
-		content="Portfolio de Franco Vera - Analista de Sistemas y desarrollador web full-stack.">
-	<meta name="twitter:description"
-		content="Desarrollo sitios y aplicaciones web modernos y optimizados. Explorá mis proyectos y tecnologías.">
-	<meta name="twitter:image"
-		content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/assets/img/branding/logo.png">
-	<meta name="twitter:url" content="https://mother-s-milk.github.io/Portfolio-FrancoD.Vera/">
 
-	<!-- STANDAR FAVICON -->
-	<link rel="icon" href="assets/img/branding/icon.png" type="image/x-icon">
+	<link rel="icon" href="assets/img/branding/icon.png" type="image/png">
 
 	<!-- STYLES -->
+	<!-- Librerías externas primero -->
+	<link rel="stylesheet" href="assets/fontAwesome/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+	<!-- Estilos propios -->
+	<link rel="stylesheet" type="text/css" href="assets/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/core.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/topnav.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/toast.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/hero.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/about.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/skills.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/projects.css">
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/education.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/contact.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/footer.css">
 
-	<!-- FONT AWESOME -->
-	<link rel="stylesheet" href="assets/fontAwesome/css/all.min.css">
-
 	<!-- SCRIPTS -->
-	<script defer type="module" src="assets/js/topnav.js"></script>
-	<script defer type="module" src="assets/js/index.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+	<script type="module" src="assets/js/copy-email.js"></script>
+	<script type="module" src="assets/js/topnav.js"></script>
+	<script type="module" src="assets/js/about-me.js"></script>
+	<script type="module" src="assets/js/projects/index.js"></script>
 </head>
 
 <body>
-	<div class="topnav">
-
+	<header class="topnav">
 		<div class="topnav__inner">
+			<div class="topnav__inner--left">
+				<button type="button" class="topnav__toggle-button" id="toggleMenuButton" aria-label="Open menu">
+					<i class="fa-solid fa-bars"></i>
+				</button>
 
-			<a href=""><span class="topnav__logo">FDV</span></a>
+				<a href="index.html" aria-label="Ir al inicio">
+					<span class="topnav__logo">FDV</span>
+				</a>
 
-			<div class="topnav__desktop">
-				<nav class="topnav__desktop--links">
-					<a href="#home" class="topnav__desktop--link">Inicio</a>
-					<a href="#about" class="topnav__desktop--link">Sobre mi</a>
-					<a href="#projects" class="topnav__desktop--link">Proyectos</a>
-					<a href="#contact" class="topnav__desktop--link">Contacto</a>
+				<nav class="topnav__desktop" aria-label="Menú principal">
+					<ul class="topnav__desktop--list">
+						<li>
+							<a href="#about" class="topnav__desktop--link">Sobre mi</a>
+						</li>
+						<li>
+							<a href="#skills" class="topnav__desktop--link">Herramientas</a>
+						</li>
+						<li>
+							<a href="#projects" class="topnav__desktop--link">Proyectos</a>
+						</li>
+						<li>
+							<a href="#contact" class="topnav__desktop--link">Contacto</a>
+						</li>
 					</ul>
 				</nav>
-
-				<div class="topnav__actions">
-					<a href="javascript:void(0)" class="topnav__action btn--primary" id="copy-email"
-						onclick="copyEmail(event)" aria-label="Copiar email">
-						Hablemos
-						<i class="fa-solid fa-envelope"></i>
-					</a>
-					<a href="assets/CV-VeraFranco.pdf" download="CV-VeraFranco" target="_blank" class="topnav__action btn--ghost" aria-label="Ver CV">
-						CV
-						<i class="fa-solid fa-file"></i>
-					</a>
-				</div>
 			</div>
 
-			<button type="button" class="topnav__toggle-button" aria-label="Open menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
+			<div class="topnav__actions">
+				<button type="button" class="topnav__action btn--ghost" id="copy-email" aria-label="Copiar email">
+					<i class="fa-solid fa-envelope" aria-hidden="true"></i>
+					<span>Email</span>
+				</button>
 
-			<div class="topnav__mobile">
-				<nav class="topnav__mobile--links">
-					<a href="#home" class="topnav__mobile--link">Inicio</a>
-					<a href="#about" class="topnav__mobile--link">Sobre mi</a>
-					<a href="#projects" class="topnav__mobile--link">Proyectos</a>
-					<a href="#contact" class="topnav__mobile--link">Contacto</a>
-				</nav>
+				<a href="assets/CV-VeraFranco.pdf" download="CV-VeraFranco" target="_blank" class="topnav__action btn--primary" aria-label="Ver CV">
+					<i class="fa-solid fa-file" aria-hidden="true"></i>
+					<span>CV</span>
+				</a>
 			</div>
-
 		</div>
 
-	</div>
+		<nav class="topnav__mobile" id="mobileNav" aria-label="Menú móvil" aria-hidden="true">
+			<ul class="topnav__mobile--list">
+				<li>
+					<a href="#about" class="topnav__mobile--link">Sobre mi</a>
+				</li>
+				<li>
+					<a href="#skills" class="topnav__mobile--link">Herramientas</a>
+				</li>
+				<li>
+					<a href="#projects" class="topnav__mobile--link">Proyectos</a>
+				</li>
+				<li>
+					<a href="#contact" class="topnav__mobile--link">Contacto</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
 
 	<main>
 		<section class="hero container">
+			<div class="hero__bg" aria-hidden="true"></div>
+
 			<div class="hero__inner">
-				<div class="hero__tag">
-					<span>SYSTEM ONLINE</span>
+				<div class="hero__tag" role="status">
+					<span class="hero__tag-dot"></span>
+					<span>DISPONIBLE</span>
 				</div>
 
-				<h1 class="hero__title">
-					Franco Vera
-				</h1>
+				<h1 class="hero__title">Franco Vera</h1>
 
 				<p class="hero__subtitle">
 					Full Stack Developer
@@ -129,10 +132,8 @@
 				</p>
 
 				<nav class="hero__actions" aria-label="Enlaces rápidos a proyectos y contacto">
-					<a href="#projects" class="hero__action btn--primary" aria-label="Ir a la sección de proyectos">Ver
-						trabajos</a>
-					<a href="#contact" class="hero__action btn--ghost"
-						aria-label="Ir a la sección de contacto">Contactar</a>
+					<a href="#projects" class="hero__action btn--primary">Ver trabajos</a>
+					<a href="#contact" class="hero__action btn--ghost">Contactar</a>
 				</nav>
 			</div>
 		</section>
@@ -141,22 +142,28 @@
 			<hr class="divider">
 		</div>
 
-		<!-- <section class="container section" id="about">
+		<section class="section container" id="about">
 			<div class="about__inner">
+				<div class="about-right">
+					<div class="about-image-container">
+						<img src="assets/img/profile/me.webp" alt="">
+					</div>
+				</div>
+
 				<div class="about-left">
-					<header class="heading-section">
-						<h2 class="heading-title">Sobre mí</h2>
+					<header class="about-heading">
+						<h2 class="about-heading-title">Sobre mí</h2>
 					</header>
 
 					<section class="about-bio">
-						<p class="bio-text">
-							Mi nombre es Franco. Soy estudiante avanzado de la carrera Analista de Sistemas. Desarrollo soluciones web completas, combinando diseño, código y arquitectura.
+						<p class="about-bio-text">
+							Soy estudiante avanzado de la carrera Analista de Sistemas. Desarrollo aplicaciones web completas, desde la gestión de requerimientos hasta el código que conforma tanto front como back.
 						</p>
-						<p class="bio-text">
-							Durante mi formación y experiencia adquirí habilidades para diseñar y construir software escalable, desde pequeños proyectos hasta aplicaciones de mayor complejidad.
+						<p class="about-bio-text">
+							Durante mi formación académica y experiencia adquirí habilidades para diseñar y construir software escalable y de calidad.
 						</p>
-						<p class="bio-text">
-							Me motiva desarrollar aplicaciones web que aporten un valor real y aprender constantemente nuevas herramientas para ofrecer soluciones modernas y eficientes.
+						<p class="about-bio-text">
+							Me motiva la idea de encarar nuevos desafíos y trabajar en equipo, desarrollar aplicaciones web que aporten un valor real y aprender constantemente.
 						</p>
 					</section>
 
@@ -182,11 +189,7 @@
 							<ul class="about-submenu">
 								<li>
 									<i class="fa-solid fa-at"></i>
-									<span>franco.vera.dev@gmail.com</span>
-								</li>
-								<li>
-									<i class="fa-solid fa-phone"></i>
-									<span>297-5488673</span>
+									<span>francoveradrms@gmail.com</span>
 								</li>
 								<li>
 									<i class="fa-brands fa-linkedin-in"></i>
@@ -196,82 +199,91 @@
 						</li>
 					</ul>
 				</div>
-
-				<div class="about-right">
-					<div class="about-image-container">
-						<img src="assets/img/profile/me.webp" alt="">
-					</div>
-				</div>
 			</div>
 		</section>
 
 		<div class="divider__container">
 			<hr class="divider">
-		</div> -->
+		</div>
 
 		<section class="container section section-highlight" id="skills">
 			<header class="section__header">
 				<h2 class="section__title">Herramientas</h2>
-				<p class="section__description">Tecnologías que uso para diseñar, desarrollar y desplegar aplicaciones
-					web.</p>
+				<p class="section__description">Tecnologías que uso para mis trabajos.</p>
 			</header>
 
-			<div class="skills__container">
-				<div class="skill__category">
-					<h3 class="skill__category--title">Front End</h3>
-					<div class="skills">
-						<div class="skill__card">
-							<i class="devicon-html5-plain colored"></i>
-							<span>HTML</span>
-						</div>
-						<div class="skill__card">
-							<i class="devicon-css3-plain colored"></i>
-							<span>CSS</span>
-						</div>
-						<div class="skill__card">
-							<i class="devicon-javascript-plain colored"></i>
-							<span>JavaScript</span>
-						</div>
-						<div class="skill__card">
-							<i class="devicon-react-original colored"></i>
-							<span>React</span>
-						</div>
-					</div>
-				</div>
+			<div class="skills__grid">
+				<article class="skill__category">
+					<h3 class="skill__category--label">Front End</h3>
+					<ul class="skill__list">
+						<li class="skill__item">
+							<div class="skill__icon-wrap" aria-hidden="true">
+								<i class="devicon-html5-plain colored"></i>
+							</div>
+							<span class="skill__name">HTML5</span>
+						</li>
+						<li class="skill__item">
+							<div class="skill__icon-wrap" aria-hidden="true">
+								<i class="devicon-css3-plain colored"></i>
+							</div>
+							<span class="skill__name">CSS3</span>
+						</li>
+						<li class="skill__item">
+							<div class="skill__icon-wrap" aria-hidden="true">
+								<i class="devicon-javascript-plain colored"></i>
+							</div>
+							<span class="skill__name">JavaScript</span>
+						</li>
+						<li class="skill__item">
+							<div class="skill__icon-wrap" aria-hidden="true">
+								<i class="devicon-react-original colored"></i>
+							</div>
+							<span class="skill__name">React</span>
+						</li>
+					</ul>
+				</article>
 
-				<div class="skill__category">
-					<h3 class="skill__category--title">Back End</h3>
-					<div class="skills">
-						<div class="skill__card">
-							<i class="devicon-php-plain colored"></i>
-							<span>PHP</span>
-						</div>
-						<div class="skill__card">
-							<i class="devicon-laravel-original colored"></i>
-							<span>Laravel</span>
-						</div>
-					</div>
-				</div>
+				<article class="skill__category">
+					<h3 class="skill__category--label">Back End</h3>
+					<ul class="skill__list">
+						<li class="skill__item">
+							<div class="skill__icon-wrap" aria-hidden="true">
+								<i class="devicon-php-plain colored"></i>
+							</div>
+							<span class="skill__name">PHP</span>
+						</li>
+						<li class="skill__item">
+							<div class="skill__icon-wrap" aria-hidden="true">
+								<i class="devicon-laravel-original colored"></i>
+							</div>
+							<span class="skill__name">Laravel</span>
+						</li>
+					</ul>
+				</article>
 
-				<div class="skill__category">
-					<h3 class="skill__category--title">Bases de datos</h3>
-					<div class="skills">
-						<div class="skill__card">
-							<i class="devicon-mysql-plain colored"></i>
-							<span>MySQL</span>
-						</div>
-					</div>
-				</div>
+				<article class="skill__category">
+					<h3 class="skill__category--label">Bases de datos</h3>
+					<ul class="skill__list">
+						<li class="skill__item">
+							<div class="skill__icon-wrap" aria-hidden="true">
+								<i class="devicon-mysql-plain colored"></i>
+							</div>
+							<span class="skill__name">MySQL</span>
+						</li>
+					</ul>
+				</article>
 
-				<div class="skill__category">
-					<h3 class="skill__category--title">Control de versiones</h3>
-					<div class="skills">
-						<div class="skill__card">
-							<i class="devicon-git-plain colored"></i>
-							<span>GIT</span>
-						</div>
-					</div>
-				</div>
+				<article class="skill__category">
+					<h3 class="skill__category--label">Control de versiones</h3>
+					<ul class="skill__list">
+						<li class="skill__item">
+							<div class="skill__icon-wrap" aria-hidden="true">
+								<i class="devicon-git-plain colored"></i>
+							</div>
+							<span class="skill__name">Git</span>
+						</li>
+					</ul>
+				</article>
 			</div>
 		</section>
 
@@ -310,11 +322,11 @@
 				<i class="fas fa-mobile-alt" aria-hidden="true"></i>
 				<p class="about-text">Desarrollo de aplicaciones móviles.</p>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="divider__container">
 			<hr class="divider">
-		</div> -->
+		</div>
 
 		<section class="section container" id="projects">
 			<header class="section__header section__header--center">
@@ -343,6 +355,39 @@
 		<div class="divider__container">
 			<hr class="divider">
 		</div>
+
+		<section class="section container section-highlight section-contact" id="contact">
+			<div class="contact-left">
+				<span>Contacto</span>
+				<h3>¿Te gustaría que trabajemos juntos?</h3>
+				<p>Dejame un mensaje</p>
+			</div>
+			<div class="contact-form">
+				<form action="">
+					<header>
+						<h3>Formulario de contacto</h3>
+					</header>
+					<section>
+						<div>
+							<label for="contact-email">Email</label>
+							<input type="email" name="contact-email" id="contact-email">
+						</div>
+						<div>
+							<label for="contact-email">Asunto</label>
+							<input type="text" name="contact-email" id="contact-email">
+						</div>
+						<div>
+							<label for="contact-message">Mensaje</label>
+							<input type="text" name="contact-message" id="contact-message">
+						</div>
+					</section>
+					<div>
+						<button type="button" class="send-email-button" id="sendEmailContact">Enviar</button>
+						<button type="button" class="reset-contact-button" id="resetContact" disabled>Resetear</button>
+					</div>
+				</form>
+			</div>
+		</section>
 
 		<!-- <section class="container section" id="education">
 			<header class="section-header">
@@ -417,13 +462,11 @@
 		</div>
 	</footer>
 
-	<!-- Modal -->
-	<!-- <div id="emailModal" class="modal">
-  		<div class="modal-content">
-  			¡Copiado!
-    	</div>
-	</div> -->
-
+	<!-- Toast email -->
+	<div class="toast" id="copy-toast" role="status" aria-live="polite">
+		<span class="toast__icon" aria-hidden="true">✓</span>
+		<span class="toast__text">¡Email copiado!</span>
+	</div>
 </body>
 
 </html>

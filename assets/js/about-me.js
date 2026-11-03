@@ -7,15 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     aboutButtons.forEach(button => {
         button.addEventListener("click", () => {
-
-            // aboutButtons.forEach(btn => {
-            //     if (btn !== button) {
-            //         btn.classList.remove("active");
-            //         btn.closest("li").querySelector(".about-submenu").classList.remove("active");
-            //         btn.querySelector(".about-button-icon").classList.remove("active");
-            //     }
-            // });
-
             const listItem = button.closest("li");
             const submenu = listItem.querySelector(".about-submenu");
             const icon = button.querySelector(".about-button-icon");

@@ -1,17 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.querySelector(".topnav__toggle-button");
-    const mobileMenu = document.querySelector(".topnav__mobile");
+    const toggleBtn = document.getElementById("toggleMenuButton");
+    const mobileMenu = document.getElementById("mobileNav");
 
     if (!toggleBtn || !mobileMenu) return;
 
     const openMenu = () => {
         mobileMenu.classList.add("open");
         toggleBtn.classList.add("open");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        toggleBtn.setAttribute("aria-expanded", "true");
     };
 
     const closeMenu = () => {
         mobileMenu.classList.remove("open");
         toggleBtn.classList.remove("open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        toggleBtn.setAttribute("aria-expanded", "false");
     };
 
     const toggleMenu = () => {

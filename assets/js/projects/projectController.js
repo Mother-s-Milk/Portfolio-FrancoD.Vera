@@ -1,4 +1,4 @@
-import { service } from "./service.js";
+import { projectService } from "./projectService.js";
 import { VISIBLE_INITIAL, LOAD_MORE_STEP } from "./constants.js";
 import { buildCard } from "./helpers.js";
 
@@ -6,13 +6,13 @@ let allProjects = [];
 let activeFilter = 'all';
 let visibleCount = VISIBLE_INITIAL;
 
-export const controller = {
+export const projectController = {
     init: () => {
-        service.getProjects()
+        projectService.getProjects()
             .then(projects => {
                 allProjects = projects;
-                controller.renderProjects();
-                controller.initListeners();
+                projectController.renderProjects();
+                projectController.initListeners();
             })
             .catch(error => console.error('Error al cargar los proyectos: ', error));
     },
@@ -52,7 +52,7 @@ export const controller = {
 
                 activeFilter = btn.dataset.filter;
                 visibleCount = VISIBLE_INITIAL;
-                controller.renderProjects();
+                projectController.renderProjects();
             });
         });
 
@@ -67,7 +67,7 @@ export const controller = {
                 visibleCount += LOAD_MORE_STEP;  // expande
             }
 
-            controller.renderProjects();
+            projectController.renderProjects();
         });
     }
 };
